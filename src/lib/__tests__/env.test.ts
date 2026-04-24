@@ -17,6 +17,7 @@ describe('env validation', () => {
     process.env.NODE_ENV = 'test'
     process.env.NEXT_PUBLIC_API_URL = 'http://localhost:8080'
     const { env } = await import('../env')
+
     expect(env.NEXT_PUBLIC_API_URL).toBe('http://localhost:8080')
   })
 

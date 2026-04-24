@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+
 import type { Session } from '@/lib/auth/types'
 
 type AuthState = {
@@ -7,8 +8,8 @@ type AuthState = {
   clearSession: () => void
 }
 
-export const useAuthStore = create<AuthState>()((set) => ({
+export const useAuthStore = create<AuthState>()(set => ({
   session: null,
-  setSession: (session) => set({ session }),
-  clearSession: () => set({ session: null }),
+  setSession: session => set({ session }),
+  clearSession: () => set({ session: null })
 }))

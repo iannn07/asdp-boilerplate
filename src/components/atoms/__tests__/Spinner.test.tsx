@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
+
 import { Spinner } from '../Spinner'
 
 describe('Spinner', () => {
@@ -9,8 +10,9 @@ describe('Spinner', () => {
   })
 
   it('accepts size prop', () => {
-    render(<Spinner size="lg" />)
+    render(<Spinner size='lg' />)
     const el = screen.getByRole('status')
+
     expect(el.className).toContain('h-8')
   })
 })

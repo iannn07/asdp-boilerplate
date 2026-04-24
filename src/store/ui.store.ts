@@ -13,13 +13,13 @@ type UIState = {
 
 export const useUIStore = create<UIState>()(
   persist(
-    (set) => ({
+    set => ({
       sidebarOpen: true,
       theme: 'system',
-      setSidebarOpen: (open) => set({ sidebarOpen: open }),
-      toggleSidebar: () => set((s) => ({ sidebarOpen: !s.sidebarOpen })),
-      setTheme: (theme) => set({ theme }),
+      setSidebarOpen: open => set({ sidebarOpen: open }),
+      toggleSidebar: () => set(s => ({ sidebarOpen: !s.sidebarOpen })),
+      setTheme: theme => set({ theme })
     }),
-    { name: 'ui-store' },
-  ),
+    { name: 'ui-store' }
+  )
 )

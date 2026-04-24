@@ -1,14 +1,13 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
-import { DataTable } from '../DataTable'
+
 import { createColumnHelper } from '@tanstack/react-table'
+
+import { DataTable } from '../DataTable'
 
 type Person = { name: string; email: string }
 const columnHelper = createColumnHelper<Person>()
-const columns = [
-  columnHelper.accessor('name', { header: 'Name' }),
-  columnHelper.accessor('email', { header: 'Email' }),
-]
+const columns = [columnHelper.accessor('name', { header: 'Name' }), columnHelper.accessor('email', { header: 'Email' })]
 const data: Person[] = [{ name: 'Alice', email: 'alice@test.com' }]
 
 describe('DataTable', () => {
@@ -24,7 +23,7 @@ describe('DataTable', () => {
   })
 
   it('shows empty message when data is empty', () => {
-    render(<DataTable columns={columns} data={[]} emptyMessage="No results" />)
+    render(<DataTable columns={columns} data={[]} emptyMessage='No results' />)
     expect(screen.getByText('No results')).toBeInTheDocument()
   })
 })

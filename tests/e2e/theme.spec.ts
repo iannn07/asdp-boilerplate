@@ -4,6 +4,7 @@ test.describe('Theme Toggle', () => {
   test('switches from light to dark mode', async ({ page }) => {
     await page.goto('/login')
     const html = page.locator('html')
+
     await expect(html).not.toHaveClass(/dark/)
     await page.getByRole('button', { name: /toggle theme/i }).click()
     await expect(html).toHaveClass(/dark/)

@@ -6,13 +6,11 @@ type UsersState = {
   clearSelection: () => void
 }
 
-export const useUsersStore = create<UsersState>()((set) => ({
+export const useUsersStore = create<UsersState>()(set => ({
   selectedIds: [],
-  toggleSelected: (id) =>
-    set((s) => ({
-      selectedIds: s.selectedIds.includes(id)
-        ? s.selectedIds.filter((x) => x !== id)
-        : [...s.selectedIds, id],
+  toggleSelected: id =>
+    set(s => ({
+      selectedIds: s.selectedIds.includes(id) ? s.selectedIds.filter(x => x !== id) : [...s.selectedIds, id]
     })),
-  clearSelection: () => set({ selectedIds: [] }),
+  clearSelection: () => set({ selectedIds: [] })
 }))

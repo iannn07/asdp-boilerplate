@@ -5,7 +5,7 @@ export const securityHeaders = [
   { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
   {
     key: 'Strict-Transport-Security',
-    value: 'max-age=63072000; includeSubDomains; preload',
+    value: 'max-age=63072000; includeSubDomains; preload'
   },
   { key: 'X-DNS-Prefetch-Control', value: 'on' },
   {
@@ -14,7 +14,7 @@ export const securityHeaders = [
       "default-src 'self'",
       "script-src 'self'",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob:",
-    ].join('; '),
-  },
+      "img-src 'self' data: blob:"
+    ].join('; ')
+  }
 ]

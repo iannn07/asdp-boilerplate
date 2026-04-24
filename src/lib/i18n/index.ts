@@ -1,12 +1,13 @@
-import i18nLib from 'i18n'
 import path from 'path'
+
+import i18nLib from 'i18n'
 
 i18nLib.configure({
   locales: ['id', 'en'],
   defaultLocale: 'id',
   directory: path.join(process.cwd(), 'messages'),
   objectNotation: true,
-  updateFiles: false,
+  updateFiles: false
 })
 
 export type Locale = 'id' | 'en'
@@ -16,7 +17,8 @@ export const LOCALE_COOKIE = 'NEXT_LOCALE'
 
 export function getI18n(locale: Locale) {
   i18nLib.setLocale(locale)
-  return {
-    t: (key: string) => i18nLib.__(key),
+  
+return {
+    t: (key: string) => i18nLib.__(key)
   }
 }

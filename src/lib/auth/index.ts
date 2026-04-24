@@ -9,7 +9,7 @@ const stubAdapter: AuthAdapter = {
   },
   getToken(_request: Request) {
     return null
-  },
+  }
 }
 
 let _adapter: AuthAdapter = stubAdapter

@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, it, expect, vi } from 'vitest'
+
 import { Button } from '../Button'
 
 describe('Button', () => {
@@ -11,6 +12,7 @@ describe('Button', () => {
 
   it('calls onClick when clicked', async () => {
     const handler = vi.fn()
+
     render(<Button onClick={handler}>Click</Button>)
     await userEvent.click(screen.getByRole('button'))
     expect(handler).toHaveBeenCalledOnce()

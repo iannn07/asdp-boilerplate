@@ -3,10 +3,10 @@ import userEvent from '@testing-library/user-event'
 import { describe, it, expect, vi } from 'vitest'
 
 vi.mock('@/components/templates/AuthLayout', () => ({
-  AuthLayout: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+  AuthLayout: ({ children }: { children: React.ReactNode }) => <div>{children}</div>
 }))
 vi.mock('../actions', () => ({
-  loginAction: vi.fn().mockResolvedValue({ success: false, errors: { email: 'Email is required' } }),
+  loginAction: vi.fn().mockResolvedValue({ success: false, errors: { email: 'Email is required' } })
 }))
 
 import LoginPage from '../page'

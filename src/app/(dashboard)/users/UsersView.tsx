@@ -5,6 +5,8 @@ import { Spinner } from '@/components/atoms/Spinner'
 
 export function UsersView() {
   const { data, isLoading } = useUsers()
+
   if (isLoading) return <Spinner />
-  return <UserTable data={data ?? []} />
+  
+return <UserTable data={data ?? []} />
 }
