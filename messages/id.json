@@ -1,0 +1,31 @@
+{
+  "common": {
+    "save": "Simpan",
+    "cancel": "Batal",
+    "delete": "Hapus",
+    "edit": "Ubah",
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "search": "Cari"
+  },
+  "auth": {
+    "login": "Masuk",
+    "logout": "Keluar",
+    "email": "Email",
+    "password": "Kata Sandi",
+    "loginTitle": "Masuk ke akun Anda"
+  },
+  "users": {
+    "title": "Pengguna",
+    "name": "Nama",
+    "email": "Email",
+    "role": "Peran",
+    "addUser": "Tambah Pengguna"
+  },
+  "nav": {
+    "dashboard": "Dasbor",
+    "users": "Pengguna",
+    "reports": "Laporan",
+    "settings": "Pengaturan"
+  }
+}
