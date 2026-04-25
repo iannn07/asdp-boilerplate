@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation'
 
 import { Button } from '@/components/atoms/Button'
-import { LOCALE_COOKIE, type Locale } from '@/lib/i18n'
+import { LOCALE_COOKIE, type Locale } from '@/lib/i18n/shared'
 
 type LocaleSwitcherProps = { currentLocale: Locale }
 

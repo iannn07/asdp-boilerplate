@@ -14,8 +14,8 @@ async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   })
 
   if (!res.ok) throw new ApiError(res.status, res.statusText)
-  
-return res.json() as Promise<T>
+
+  return res.json() as Promise<T>
 }
 
 export const api = {

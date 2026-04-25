@@ -1,6 +1,6 @@
 import { Navbar } from '@/components/organisms/Navbar'
 import { Sidebar } from '@/components/organisms/Sidebar'
-import type { Locale } from '@/lib/i18n'
+import type { Locale } from '@/lib/i18n/shared'
 
 type DashboardShellProps = {
   children: React.ReactNode

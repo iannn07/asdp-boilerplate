@@ -7,8 +7,7 @@ import { Button } from '@/components/atoms/Button'
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme()
 
-  
-return (
+  return (
     <Button
       variant='ghost'
       size='icon'

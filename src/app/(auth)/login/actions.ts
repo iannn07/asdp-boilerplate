@@ -13,8 +13,8 @@ export async function loginAction(_prev: LoginActionResult | null, formData: For
     })
 
     console.log('Login attempt for:', data.email)
-    
-return { success: true }
+
+    return { success: true }
   } catch (err) {
     if (err instanceof ValiError) {
       const errors: Record<string, string> = {}
@@ -25,11 +25,9 @@ return { success: true }
         errors[field] = issue.message
       }
 
-      
-return { success: false, errors }
+      return { success: false, errors }
     }
 
-    
-return { success: false, errors: { form: 'An error occurred' } }
+    return { success: false, errors: { form: 'An error occurred' } }
   }
 }

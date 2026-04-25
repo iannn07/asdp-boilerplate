@@ -2,23 +2,23 @@ import path from 'path'
 
 import i18nLib from 'i18n'
 
+import { locales, defaultLocale } from './shared'
+import type { Locale } from './shared'
+
+export { type Locale, locales, defaultLocale, LOCALE_COOKIE } from './shared'
+
 i18nLib.configure({
-  locales: ['id', 'en'],
-  defaultLocale: 'id',
-  directory: path.join(process.cwd(), 'messages'),
+  locales: [...locales],
+  defaultLocale,
+  directory: path.join(process.cwd(), 'src/locales/messages'),
   objectNotation: true,
   updateFiles: false
 })
 
-export type Locale = 'id' | 'en'
-export const locales: Locale[] = ['id', 'en']
-export const defaultLocale: Locale = 'id'
-export const LOCALE_COOKIE = 'NEXT_LOCALE'
-
 export function getI18n(locale: Locale) {
   i18nLib.setLocale(locale)
-  
-return {
+
+  return {
     t: (key: string) => i18nLib.__(key)
   }
 }

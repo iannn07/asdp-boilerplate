@@ -41,7 +41,8 @@ export async function proxy(request: NextRequest) {
       const url = new URL('/login', request.url)
 
       url.searchParams.set('callbackUrl', pathname)
-      return NextResponse.redirect(url)
+      
+return NextResponse.redirect(url)
     }
   }
 
@@ -57,5 +58,5 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)']
 }

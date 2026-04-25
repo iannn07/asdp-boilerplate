@@ -23,8 +23,8 @@ export async function createUserAction(
     const user = await api.post<User>('/users', input)
 
     revalidateTag('users')
-    
-return { success: true, data: user }
+
+    return { success: true, data: user }
   } catch (err) {
     if (err instanceof ValiError) {
       const errors: Record<string, string> = {}
@@ -35,11 +35,9 @@ return { success: true, data: user }
         errors[field] = issue.message
       }
 
-      
-return { success: false, errors }
+      return { success: false, errors }
     }
 
-    
-return { success: false, errors: { form: 'Failed to create user' } }
+    return { success: false, errors: { form: 'Failed to create user' } }
   }
 }
