@@ -1,4 +1,4 @@
-import type { NextRequest} from 'next/server';
+import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 
 import { defaultLocale, locales, LOCALE_COOKIE } from '@/lib/i18n'
@@ -21,7 +21,7 @@ function resolveLocale(request: NextRequest): Locale {
   return defaultLocale
 }
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
   const locale = resolveLocale(request)
 
@@ -41,8 +41,7 @@ export async function middleware(request: NextRequest) {
       const url = new URL('/login', request.url)
 
       url.searchParams.set('callbackUrl', pathname)
-      
-return NextResponse.redirect(url)
+      return NextResponse.redirect(url)
     }
   }
 
@@ -58,5 +57,5 @@ return NextResponse.redirect(url)
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)']
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 }
