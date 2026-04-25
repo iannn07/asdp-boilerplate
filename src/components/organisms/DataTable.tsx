@@ -7,24 +7,19 @@ import {
   type ColumnDef
 } from '@tanstack/react-table'
 
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { Button } from '@/components/atoms/Button'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { useTranslation } from '@/lib/i18n/useTranslation'
 
 type DataTableProps<TData> = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   columns: ColumnDef<TData, any>[]
   data: TData[]
   emptyMessage?: string
   pageSize?: number
 }
 
-export function DataTable<TData>({
-  columns,
-  data,
-  emptyMessage,
-  pageSize = 10
-}: DataTableProps<TData>) {
+export function DataTable<TData>({ columns, data, emptyMessage, pageSize = 10 }: DataTableProps<TData>) {
+  // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
     data,
     columns,

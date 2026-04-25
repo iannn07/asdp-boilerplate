@@ -24,9 +24,21 @@ export default function DashboardPage() {
         }
       >
         <div className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
-          <StatCard title={t('common.totalUsers')} value='—' icon={<IconUsers className='h-4 w-4 text-muted-foreground' />} />
-          <StatCard title={t('common.reports')} value='—' icon={<IconChartBar className='h-4 w-4 text-muted-foreground' />} />
-          <StatCard title={t('common.activeSessions')} value='—' icon={<IconActivity className='h-4 w-4 text-muted-foreground' />} />
+          <StatCard
+            title={t('common.totalUsers')}
+            value='—'
+            icon={<IconUsers className='h-4 w-4 text-muted-foreground' />}
+          />
+          <StatCard
+            title={t('common.reports')}
+            value='—'
+            icon={<IconChartBar className='h-4 w-4 text-muted-foreground' />}
+          />
+          <StatCard
+            title={t('common.activeSessions')}
+            value='—'
+            icon={<IconActivity className='h-4 w-4 text-muted-foreground' />}
+          />
         </div>
       </Suspense>
     </div>

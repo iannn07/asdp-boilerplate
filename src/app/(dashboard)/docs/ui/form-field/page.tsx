@@ -24,19 +24,16 @@ export default function FormFieldPage() {
     <div className='space-y-10'>
       <div>
         <h1 className='text-3xl font-bold tracking-tight'>Form Field</h1>
-        <p className='mt-2 text-muted-foreground'>
-          {t('docs.formField.desc')}
-        </p>
+        <p className='mt-2 text-muted-foreground'>{t('docs.formField.desc')}</p>
         <p className='mt-1 text-xs text-muted-foreground'>
-          {t('docs.source')}: <code className='rounded bg-muted px-1 py-0.5'>src/components/molecules/FormField.tsx</code>
+          {t('docs.source')}:{' '}
+          <code className='rounded bg-muted px-1 py-0.5'>src/components/molecules/FormField.tsx</code>
         </p>
       </div>
 
       <section className='space-y-3'>
         <h2 className='text-xl font-semibold'>{t('docs.whenToUse')}</h2>
-        <p className='text-sm text-muted-foreground'>
-          {t('docs.formField.whenToUse')}
-        </p>
+        <p className='text-sm text-muted-foreground'>{t('docs.formField.whenToUse')}</p>
       </section>
 
       <section className='space-y-4'>
@@ -70,9 +67,7 @@ export function FormFieldDefault() {
 
         <div className='space-y-2'>
           <h3 className='text-base font-medium'>With Error</h3>
-          <p className='text-sm text-muted-foreground'>
-            {t('docs.formField.errorDesc')}
-          </p>
+          <p className='text-sm text-muted-foreground'>{t('docs.formField.errorDesc')}</p>
           <ComponentPreview
             code={`import { FormField } from "@/components/molecules/FormField"
 
@@ -145,9 +140,7 @@ export function FormFieldDisabled() {
 
       <section className='space-y-4'>
         <h2 className='text-xl font-semibold'>{t('docs.apiReference')}</h2>
-        <p className='text-sm text-muted-foreground'>
-          {t('docs.formField.nativePropsNote')}
-        </p>
+        <p className='text-sm text-muted-foreground'>{t('docs.formField.nativePropsNote')}</p>
         <PropsTable data={PROPS} />
       </section>
     </div>

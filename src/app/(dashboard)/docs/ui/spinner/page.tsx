@@ -27,9 +27,7 @@ export default function SpinnerPage() {
 
       <section className='space-y-3'>
         <h2 className='text-xl font-semibold'>{t('docs.whenToUse')}</h2>
-        <p className='text-sm text-muted-foreground'>
-          {t('docs.spinner.whenToUse')}
-        </p>
+        <p className='text-sm text-muted-foreground'>{t('docs.spinner.whenToUse')}</p>
       </section>
 
       <section className='space-y-4'>
@@ -55,9 +53,7 @@ export function SpinnerDefault() {
 
         <div className='space-y-2'>
           <h3 className='text-base font-medium'>Sizes</h3>
-          <p className='text-sm text-muted-foreground'>
-            {t('docs.spinner.sizesDesc')}
-          </p>
+          <p className='text-sm text-muted-foreground'>{t('docs.spinner.sizesDesc')}</p>
           <ComponentPreview
             code={`import { Spinner } from "@/components/atoms/Spinner"
 

@@ -1,18 +1,36 @@
 'use client'
 
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
+import { useTheme } from 'next-themes'
 import { IconCheck, IconCopy } from '@tabler/icons-react'
+import { codeToHtml } from 'shiki'
 
 import { cn } from '@/lib/cn'
 
 type CodeBlockProps = {
   code: string
+  lang?: string
   className?: string
 }
 
-export function CodeBlock({ code, className }: CodeBlockProps) {
+export function CodeBlock({ code, lang = 'tsx', className }: CodeBlockProps) {
   const [isCopied, setIsCopied] = useState(false)
+  const [highlightedHtml, setHighlightedHtml] = useState<string | null>(null)
+  const { resolvedTheme } = useTheme()
+
+  useEffect(() => {
+    let isMounted = true
+    const theme = resolvedTheme === 'dark' ? 'github-dark' : 'github-light'
+
+    codeToHtml(code, { lang, theme }).then(html => {
+      if (isMounted) setHighlightedHtml(html)
+    })
+
+    return () => {
+      isMounted = false
+    }
+  }, [code, lang, resolvedTheme])
 
   const handleCopy = useCallback(async () => {
     await navigator.clipboard.writeText(code)
@@ -30,9 +48,17 @@ export function CodeBlock({ code, className }: CodeBlockProps) {
       >
         {isCopied ? <IconCheck className='size-3.5' /> : <IconCopy className='size-3.5' />}
       </button>
-      <pre className='overflow-x-auto rounded-lg border bg-muted/50 p-4 text-[13px] leading-relaxed'>
-        <code>{code}</code>
-      </pre>
+
+      {highlightedHtml ? (
+        <div
+          className='[&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:border [&_pre]:p-4 [&_pre]:text-[13px] [&_pre]:leading-relaxed'
+          dangerouslySetInnerHTML={{ __html: highlightedHtml }}
+        />
+      ) : (
+        <pre className='overflow-x-auto rounded-lg border bg-muted/50 p-4 text-[13px] leading-relaxed'>
+          <code>{code}</code>
+        </pre>
+      )}
     </div>
   )
 }

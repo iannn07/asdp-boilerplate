@@ -173,6 +173,178 @@
       "whenToUse": "Gunakan untuk data tabular yang membutuhkan paginasi sisi klien. Definisikan kolom menggunakan ColumnDef dari TanStack Table dan berikan data sebagai array. Untuk tabel read-only sederhana tanpa paginasi, gunakan primitif Table dasar secara langsung.",
       "defaultDesc": "Definisikan kolom menggunakan ColumnDef dari TanStack Table dan berikan data sebagai array.",
       "pageSizeDesc": "Gunakan pageSize untuk mengontrol baris per halaman."
+    },
+    "checkbox": {
+      "desc": "Kontrol yang memungkinkan pengguna beralih antara dicentang dan tidak dicentang.",
+      "whenToUse": "Gunakan untuk input formulir boolean — persetujuan syarat, toggle fitur, daftar multi-pilih. Untuk opsi yang saling eksklusif, gunakan Radio Group."
+    },
+    "selectComp": {
+      "desc": "Menampilkan daftar opsi untuk dipilih pengguna — dipicu oleh tombol.",
+      "whenToUse": "Gunakan saat pengguna harus memilih satu opsi dari daftar 5+. Untuk opsi lebih sedikit, pertimbangkan Radio Group. Untuk perilaku native di mobile, gunakan Native Select."
+    },
+    "switchComp": {
+      "desc": "Kontrol yang memungkinkan pengguna beralih antara aktif dan nonaktif.",
+      "whenToUse": "Gunakan untuk toggle aktif/nonaktif instan — notifikasi, mode gelap, flag fitur. Berbeda dengan Checkbox, Switch mengisyaratkan perubahan langsung berlaku."
+    },
+    "radioGroup": {
+      "desc": "Sekelompok tombol yang dapat dicentang di mana hanya satu yang dapat aktif.",
+      "whenToUse": "Gunakan saat pengguna harus memilih tepat satu opsi dari set kecil (2-5 opsi). Untuk daftar lebih panjang, gunakan Select."
+    },
+    "textareaComp": {
+      "desc": "Menampilkan textarea formulir untuk input teks multi-baris.",
+      "whenToUse": "Gunakan untuk input teks multi-baris — komentar, deskripsi, pesan. Untuk teks satu baris, gunakan Input."
+    },
+    "sliderComp": {
+      "desc": "Input di mana pengguna memilih nilai dari rentang tertentu.",
+      "whenToUse": "Gunakan untuk input rentang numerik — volume, kecerahan, rentang harga. Untuk input numerik presisi, gunakan Input dengan type='number'."
+    },
+    "nativeSelect": {
+      "desc": "Elemen select HTML native yang di-style dengan integrasi sistem desain konsisten.",
+      "whenToUse": "Gunakan saat membutuhkan perilaku select OS native, terutama di perangkat mobile. Untuk dropdown kustom, gunakan komponen Select."
+    },
+    "fieldComp": {
+      "desc": "Gabungkan label, kontrol, dan teks bantuan untuk membuat field formulir yang aksesibel.",
+      "whenToUse": "Gunakan sebagai blok pembangunan untuk field formulir. Menyediakan asosiasi label yang tepat, teks deskripsi, dan pesan error dengan atribut ARIA yang benar."
+    },
+    "inputGroup": {
+      "desc": "Tambahkan addon, tombol, dan konten pembantu ke input.",
+      "whenToUse": "Gunakan untuk menambahkan konteks visual ke input — simbol mata uang, prefix URL, tombol aksi. Membungkus Input dengan elemen prefix/suffix."
+    },
+    "inputOtp": {
+      "desc": "Komponen password satu kali yang aksesibel dengan fungsionalitas salin-tempel.",
+      "whenToUse": "Gunakan untuk input kode verifikasi — OTP email, kode 2FA, verifikasi telepon. Mendukung tempel dari clipboard dan auto-advance."
+    },
+    "dialog": {
+      "desc": "Jendela yang di-overlay pada jendela utama, membuat konten di bawahnya tidak aktif.",
+      "whenToUse": "Gunakan untuk interaksi fokus yang memerlukan perhatian pengguna — formulir, konfirmasi, tampilan detail. Untuk konten pelengkap non-blocking, gunakan Sheet."
+    },
+    "alertDialog": {
+      "desc": "Dialog modal yang menginterupsi pengguna dengan konten penting dan mengharapkan respons.",
+      "whenToUse": "Gunakan untuk aksi destruktif atau tidak dapat dikembalikan yang memerlukan konfirmasi eksplisit — hapus, buang perubahan, logout. Untuk dialog umum, gunakan Dialog."
+    },
+    "popoverComp": {
+      "desc": "Menampilkan konten kaya dalam portal, dipicu oleh tombol.",
+      "whenToUse": "Gunakan untuk konten kontekstual yang butuh lebih banyak ruang dari Tooltip — panel pengaturan, pemilih warna, formulir filter. Untuk petunjuk teks sederhana, gunakan Tooltip."
+    },
+    "hoverCard": {
+      "desc": "Untuk pengguna yang dapat melihat pratinjau konten di balik tautan.",
+      "whenToUse": "Gunakan untuk pratinjau tautan — profil pengguna, ringkasan artikel, info repositori. Konten muncul saat hover dan bersifat pelengkap, bukan esensial."
+    },
+    "sonnerComp": {
+      "desc": "Komponen toast yang opinionated untuk notifikasi sementara.",
+      "whenToUse": "Gunakan untuk umpan balik singkat non-blocking — pesan sukses, peringatan error, pembaruan status. Toast auto-dismiss dan bertumpuk di bawah viewport."
+    },
+    "progressComp": {
+      "desc": "Menampilkan indikator kemajuan penyelesaian tugas.",
+      "whenToUse": "Gunakan untuk kemajuan terukur — unggah file, langkah formulir, pemrosesan data. Untuk loading tidak terukur, gunakan Spinner."
+    },
+    "emptyComp": {
+      "desc": "Menampilkan state kosong saat tidak ada data.",
+      "whenToUse": "Gunakan saat daftar, tabel, atau bagian tidak memiliki konten — pengguna pertama kali, hasil pencarian kosong, data terfilter. Menyediakan pola state kosong yang konsisten."
+    },
+    "drawerComp": {
+      "desc": "Komponen drawer yang meluncur dari tepi layar.",
+      "whenToUse": "Gunakan untuk panel ramah mobile — navigasi, filter, aksi cepat. Meluncur dari bawah secara default. Untuk panel samping, gunakan Sheet."
+    },
+    "tabs": {
+      "desc": "Sekumpulan bagian konten berlapis yang ditampilkan satu per satu.",
+      "whenToUse": "Gunakan untuk mengorganisir konten terkait ke dalam tampilan yang dapat dialihkan — kategori pengaturan, tampilan data, langkah formulir."
+    },
+    "accordionComp": {
+      "desc": "Sekumpulan heading interaktif bertumpuk vertikal yang masing-masing menampilkan bagian konten.",
+      "whenToUse": "Gunakan untuk bagian konten yang dapat dilipat — FAQ, grup pengaturan, dokumentasi. Menghemat ruang vertikal sambil menjaga konten tetap aksesibel."
+    },
+    "collapsibleComp": {
+      "desc": "Komponen interaktif yang memperluas/melipat panel.",
+      "whenToUse": "Gunakan untuk bagian tunggal yang dapat diperluas. Untuk beberapa bagian yang dapat dilipat, gunakan Accordion. Ideal untuk pola 'tampilkan lebih banyak'."
+    },
+    "breadcrumbComp": {
+      "desc": "Menampilkan jalur ke sumber daya saat ini menggunakan hierarki tautan.",
+      "whenToUse": "Gunakan untuk navigasi hierarkis — halaman bersarang, pohon kategori, alur multi-langkah. Membantu pengguna memahami lokasi dan navigasi kembali."
+    },
+    "paginationComp": {
+      "desc": "Paginasi dengan navigasi halaman, tautan berikutnya dan sebelumnya.",
+      "whenToUse": "Gunakan untuk konten berpaginasi — hasil pencarian, daftar data, arsip artikel. Untuk paginasi tabel, organisme DataTable sudah memiliki ini."
+    },
+    "navigationMenu": {
+      "desc": "Koleksi tautan untuk navigasi situs web.",
+      "whenToUse": "Gunakan untuk navigasi tingkat atas situs dengan mega-menu dropdown. Untuk menu lebih sederhana, gunakan DropdownMenu. Untuk navigasi aplikasi, gunakan Sidebar."
+    },
+    "menubarComp": {
+      "desc": "Menu persisten visual yang umum di aplikasi desktop.",
+      "whenToUse": "Gunakan untuk menu bar gaya desktop — menu File/Edit/View, menu toolbar. Untuk dropdown menu tunggal, gunakan DropdownMenu."
+    },
+    "scrollArea": {
+      "desc": "Meningkatkan fungsi scroll native untuk styling kustom lintas browser.",
+      "whenToUse": "Gunakan saat membutuhkan scrollbar yang di-style konsisten lintas browser. Membungkus konten dengan track dan thumb scrollbar kustom."
+    },
+    "resizableComp": {
+      "desc": "Grup dan layout panel yang dapat diubah ukurannya dengan dukungan keyboard.",
+      "whenToUse": "Gunakan untuk layout yang dapat disesuaikan — editor kode dengan pratinjau, tampilan terbagi, dasbor yang dapat dikonfigurasi."
+    },
+    "sidebarComp": {
+      "desc": "Komponen sidebar yang dapat dikomposisi, bertema, dan dikustomisasi.",
+      "whenToUse": "Gunakan untuk sidebar navigasi aplikasi. Ini adalah primitif sidebar shadcn — boilerplate sudah memiliki organisme Sidebar kustom."
+    },
+    "commandComp": {
+      "desc": "Menu perintah untuk pencarian dan aksi cepat.",
+      "whenToUse": "Gunakan untuk palet perintah (Cmd+K / Ctrl+K) — navigasi cepat, pencarian, eksekusi aksi. Dibangun di atas cmdk untuk interaksi berbasis keyboard."
+    },
+    "comboboxComp": {
+      "desc": "Input autocomplete dengan daftar saran.",
+      "whenToUse": "Gunakan untuk input select yang dapat dicari — pencarian pengguna, pemilihan tag, pencarian lokasi. Menggabungkan Input dengan daftar dropdown yang dapat difilter."
+    },
+    "contextMenu": {
+      "desc": "Menampilkan menu aksi yang dipicu oleh klik kanan.",
+      "whenToUse": "Gunakan untuk menu konteks klik kanan — aksi file, aksi baris tabel, alat kanvas. Untuk menu yang dipicu tombol, gunakan DropdownMenu."
+    },
+    "calendarComp": {
+      "desc": "Komponen kalender untuk pemilihan tanggal.",
+      "whenToUse": "Gunakan untuk pemilihan tanggal mandiri — penjadwalan acara, pemilihan rentang tanggal. Untuk input tanggal inline di formulir, kombinasikan dengan Popover untuk pola Date Picker."
+    },
+    "carouselComp": {
+      "desc": "Carousel dengan gerakan dan geser yang dibangun menggunakan Embla.",
+      "whenToUse": "Gunakan untuk konten yang dapat di-scroll horizontal — galeri gambar, testimoni, showcase fitur. Mendukung autoplay, looping, dan gesture sentuh/geser."
+    },
+    "chartComp": {
+      "desc": "Chart indah yang dibangun menggunakan Recharts.",
+      "whenToUse": "Gunakan untuk visualisasi data — bar chart, line chart, area chart, pie chart. Menyediakan container chart bertema yang terintegrasi dengan warna sistem desain."
+    },
+    "toggleComp": {
+      "desc": "Tombol dua-state yang bisa aktif atau nonaktif.",
+      "whenToUse": "Gunakan untuk aksi yang dapat di-toggle — bold/italic di editor, switch mode tampilan, toggle filter. Untuk pengaturan on/off, pilih Switch."
+    },
+    "toggleGroupComp": {
+      "desc": "Sekelompok tombol dua-state yang dapat di-toggle.",
+      "whenToUse": "Gunakan untuk opsi toggle yang dikelompokkan — perataan teks, mode tampilan, set filter. Mendukung seleksi tunggal atau multipel."
+    },
+    "buttonGroupComp": {
+      "desc": "Wadah yang mengelompokkan tombol terkait dengan styling konsisten.",
+      "whenToUse": "Gunakan untuk mengelompokkan aksi terkait secara visual — tombol toolbar, kontrol tersegmentasi, set aksi."
+    },
+    "kbdComp": {
+      "desc": "Digunakan untuk menampilkan input keyboard pengguna.",
+      "whenToUse": "Gunakan untuk menampilkan shortcut keyboard — di tooltip, menu, dokumentasi. Menampilkan representasi tombol yang di-style seperti Ctrl, Shift, Enter."
+    },
+    "alertComp": {
+      "desc": "Menampilkan callout untuk perhatian pengguna.",
+      "whenToUse": "Gunakan untuk pesan inline persisten — peringatan, pemberitahuan info, konfirmasi sukses. Untuk notifikasi sementara, gunakan Sonner (toast)."
+    },
+    "aspectRatio": {
+      "desc": "Menampilkan konten dalam rasio yang diinginkan.",
+      "whenToUse": "Gunakan untuk mempertahankan rasio aspek konsisten untuk media — gambar, video, peta. Mencegah pergeseran layout selama loading."
+    },
+    "itemComp": {
+      "desc": "Komponen serbaguna untuk menampilkan konten dengan media, judul, deskripsi, dan aksi.",
+      "whenToUse": "Gunakan untuk item daftar, entri menu, atau konten apa pun yang menggabungkan ikon/gambar dengan teks dan aksi opsional."
+    },
+    "directionComp": {
+      "desc": "Komponen provider yang mengatur arah teks untuk aplikasi.",
+      "whenToUse": "Gunakan untuk mendukung layout RTL (kanan-ke-kiri) untuk bahasa Arab, Ibrani, dan bahasa RTL lainnya."
+    },
+    "typographyComp": {
+      "desc": "Style untuk heading, paragraf, daftar, dan elemen teks lainnya.",
+      "whenToUse": "Referensi untuk tipografi konsisten di seluruh aplikasi. Gunakan kelas Tailwind untuk menerapkan style heading, body, dan prose."
     }
   }
 }

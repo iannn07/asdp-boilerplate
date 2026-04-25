@@ -173,6 +173,178 @@
       "whenToUse": "Use for tabular data that needs client-side pagination. Define columns using TanStack Table's ColumnDef and pass data as an array. For simple read-only tables without pagination, use the base Table primitive directly.",
       "defaultDesc": "Define columns using TanStack Table's ColumnDef and pass data as an array.",
       "pageSizeDesc": "Use pageSize to control rows per page."
+    },
+    "checkbox": {
+      "desc": "A control that allows the user to toggle between checked and not checked.",
+      "whenToUse": "Use for boolean form inputs — terms acceptance, feature toggles, multi-select lists. For mutually exclusive options, use Radio Group instead."
+    },
+    "selectComp": {
+      "desc": "Displays a list of options for the user to pick from — triggered by a button.",
+      "whenToUse": "Use when the user must pick one option from a list of 5+. For fewer options, consider Radio Group. For native behavior on mobile, use Native Select."
+    },
+    "switchComp": {
+      "desc": "A control that allows the user to toggle between checked and not checked.",
+      "whenToUse": "Use for instant on/off toggles — enable notifications, dark mode, feature flags. Unlike Checkbox, Switch implies the change takes effect immediately."
+    },
+    "radioGroup": {
+      "desc": "A set of checkable buttons where no more than one can be checked at a time.",
+      "whenToUse": "Use when the user must pick exactly one option from a small set (2-5 options). For longer lists, use Select instead."
+    },
+    "textareaComp": {
+      "desc": "Displays a form textarea for multi-line text input.",
+      "whenToUse": "Use for multi-line text input — comments, descriptions, messages. For single-line text, use Input instead."
+    },
+    "sliderComp": {
+      "desc": "An input where the user selects a value from within a given range.",
+      "whenToUse": "Use for numeric range inputs — volume, brightness, price range. For precise numeric input, use Input with type='number' instead."
+    },
+    "nativeSelect": {
+      "desc": "A styled native HTML select element with consistent design system integration.",
+      "whenToUse": "Use when you need native OS select behavior, especially on mobile devices. For custom-styled dropdowns, use the Select component."
+    },
+    "fieldComp": {
+      "desc": "Combine labels, controls, and help text to compose accessible form fields.",
+      "whenToUse": "Use as the building block for form fields. Provides proper label association, description text, and error messages with correct ARIA attributes."
+    },
+    "inputGroup": {
+      "desc": "Add addons, buttons, and helper content to inputs.",
+      "whenToUse": "Use to add visual context to inputs — currency symbols, URL prefixes, action buttons. Wraps Input with prefix/suffix elements."
+    },
+    "inputOtp": {
+      "desc": "Accessible one-time password component with copy-paste functionality.",
+      "whenToUse": "Use for verification code inputs — email OTP, 2FA codes, phone verification. Supports paste from clipboard and auto-advance."
+    },
+    "dialog": {
+      "desc": "A window overlaid on the primary window, rendering the content underneath inert.",
+      "whenToUse": "Use for focused interactions that require user attention — forms, confirmations, detail views. For non-blocking supplementary content, use Sheet instead."
+    },
+    "alertDialog": {
+      "desc": "A modal dialog that interrupts the user with important content and expects a response.",
+      "whenToUse": "Use for destructive or irreversible actions that require explicit confirmation — delete, discard changes, logout. For general dialogs, use Dialog instead."
+    },
+    "popoverComp": {
+      "desc": "Displays rich content in a portal, triggered by a button.",
+      "whenToUse": "Use for contextual content that needs more space than a Tooltip — settings panels, color pickers, filter forms. For simple text hints, use Tooltip."
+    },
+    "hoverCard": {
+      "desc": "For sighted users to preview content available behind a link.",
+      "whenToUse": "Use for link previews — user profiles, article summaries, repository info. Content appears on hover and should be supplementary, not essential."
+    },
+    "sonnerComp": {
+      "desc": "An opinionated toast component for temporary notifications.",
+      "whenToUse": "Use for brief, non-blocking feedback — success messages, error alerts, status updates. Toasts auto-dismiss and stack at the bottom of the viewport."
+    },
+    "progressComp": {
+      "desc": "Displays an indicator showing the completion progress of a task.",
+      "whenToUse": "Use for determinate progress — file uploads, form steps, data processing. For indeterminate loading, use Spinner instead."
+    },
+    "emptyComp": {
+      "desc": "Display an empty state when there is no data to show.",
+      "whenToUse": "Use when a list, table, or section has no content — first-time users, empty search results, filtered-out data. Provides a consistent empty state pattern."
+    },
+    "drawerComp": {
+      "desc": "A drawer component that slides in from the edge of the screen.",
+      "whenToUse": "Use for mobile-friendly panels — navigation, filters, quick actions. Slides from bottom by default. For side panels, use Sheet instead."
+    },
+    "tabs": {
+      "desc": "A set of layered sections of content displayed one at a time.",
+      "whenToUse": "Use to organize related content into switchable views — settings categories, data views, form steps. Keeps all content in the DOM for fast switching."
+    },
+    "accordionComp": {
+      "desc": "A vertically stacked set of interactive headings that each reveal a section of content.",
+      "whenToUse": "Use for collapsible content sections — FAQs, settings groups, documentation. Saves vertical space while keeping content accessible."
+    },
+    "collapsibleComp": {
+      "desc": "An interactive component which expands/collapses a panel.",
+      "whenToUse": "Use for single expandable sections. For multiple collapsible sections, use Accordion instead. Ideal for 'show more' patterns."
+    },
+    "breadcrumbComp": {
+      "desc": "Displays the path to the current resource using a hierarchy of links.",
+      "whenToUse": "Use for hierarchical navigation — nested pages, category trees, multi-step flows. Helps users understand their location and navigate back."
+    },
+    "paginationComp": {
+      "desc": "Pagination with page navigation, next and previous links.",
+      "whenToUse": "Use for paginated content — search results, data lists, article archives. For table pagination, the DataTable organism has this built in."
+    },
+    "navigationMenu": {
+      "desc": "A collection of links for navigating websites.",
+      "whenToUse": "Use for top-level site navigation with dropdown mega-menus. For simpler menus, use DropdownMenu. For app navigation, use Sidebar."
+    },
+    "menubarComp": {
+      "desc": "A visually persistent menu common in desktop applications.",
+      "whenToUse": "Use for desktop-style menu bars — File/Edit/View menus, toolbar menus. For single dropdown menus, use DropdownMenu instead."
+    },
+    "scrollArea": {
+      "desc": "Augments native scroll functionality for custom, cross-browser styling.",
+      "whenToUse": "Use when you need styled scrollbars that look consistent across browsers. Wraps content with custom scrollbar tracks and thumbs."
+    },
+    "resizableComp": {
+      "desc": "Accessible resizable panel groups and layouts with keyboard support.",
+      "whenToUse": "Use for adjustable layouts — code editors with preview, split views, configurable dashboards. Supports horizontal and vertical splitting."
+    },
+    "sidebarComp": {
+      "desc": "A composable, themeable and customizable sidebar component.",
+      "whenToUse": "Use for application navigation sidebars. This is the shadcn sidebar primitive — the boilerplate already has a custom Sidebar organism built on simpler patterns."
+    },
+    "commandComp": {
+      "desc": "Command menu for search and quick actions.",
+      "whenToUse": "Use for command palettes (Cmd+K / Ctrl+K) — quick navigation, search, action execution. Built on cmdk for keyboard-first interaction."
+    },
+    "comboboxComp": {
+      "desc": "Autocomplete input with a list of suggestions.",
+      "whenToUse": "Use for searchable select inputs — user lookup, tag selection, location search. Combines Input with a filterable dropdown list."
+    },
+    "contextMenu": {
+      "desc": "Displays a menu of actions triggered by a right click.",
+      "whenToUse": "Use for right-click context menus — file actions, table row actions, canvas tools. For button-triggered menus, use DropdownMenu."
+    },
+    "calendarComp": {
+      "desc": "A calendar component for date selection.",
+      "whenToUse": "Use for standalone date picking — event scheduling, date range selection. For inline date inputs in forms, combine with Popover for a Date Picker pattern."
+    },
+    "carouselComp": {
+      "desc": "A carousel with motion and swipe built using Embla.",
+      "whenToUse": "Use for horizontally scrollable content — image galleries, testimonials, feature showcases. Supports autoplay, looping, and touch/swipe gestures."
+    },
+    "chartComp": {
+      "desc": "Beautiful charts built using Recharts.",
+      "whenToUse": "Use for data visualization — bar charts, line charts, area charts, pie charts. Provides a themed chart container that integrates with the design system colors."
+    },
+    "toggleComp": {
+      "desc": "A two-state button that can be either on or off.",
+      "whenToUse": "Use for togglable actions — bold/italic in editors, view mode switches, filter toggles. For on/off settings, prefer Switch."
+    },
+    "toggleGroupComp": {
+      "desc": "A set of two-state buttons that can be toggled on or off.",
+      "whenToUse": "Use for grouped toggle options — text alignment, view modes, filter sets. Supports single or multiple selection."
+    },
+    "buttonGroupComp": {
+      "desc": "A container that groups related buttons together with consistent styling.",
+      "whenToUse": "Use to visually group related actions — toolbar buttons, segmented controls, action sets. Provides connected border styling."
+    },
+    "kbdComp": {
+      "desc": "Used to display textual user input from keyboard.",
+      "whenToUse": "Use to display keyboard shortcuts — in tooltips, menus, documentation. Shows styled key representations like Ctrl, Shift, Enter."
+    },
+    "alertComp": {
+      "desc": "Displays a callout for user attention.",
+      "whenToUse": "Use for persistent inline messages — warnings, info notices, success confirmations. For temporary notifications, use Sonner (toast)."
+    },
+    "aspectRatio": {
+      "desc": "Displays content within a desired ratio.",
+      "whenToUse": "Use to maintain consistent aspect ratios for media — images, videos, maps. Prevents layout shift during loading."
+    },
+    "itemComp": {
+      "desc": "A versatile component for displaying content with media, title, description, and actions.",
+      "whenToUse": "Use for list items, menu entries, or any content that combines an icon/image with text and optional actions."
+    },
+    "directionComp": {
+      "desc": "A provider component that sets the text direction for your application.",
+      "whenToUse": "Use to support RTL (right-to-left) layouts for Arabic, Hebrew, and other RTL languages. Wraps content with the correct dir attribute."
+    },
+    "typographyComp": {
+      "desc": "Styles for headings, paragraphs, lists, and other text elements.",
+      "whenToUse": "Reference for consistent typography across the application. Use Tailwind classes to apply heading, body, and prose styles."
     }
   }
 }

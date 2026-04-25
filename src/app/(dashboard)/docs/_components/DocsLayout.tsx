@@ -16,8 +16,12 @@ export function DocsLayout({ children }: DocsLayoutProps) {
 
   const segments = pathname.replace('/docs/ui', '').split('/').filter(Boolean)
   const firstSegment = segments[0]
+
   const breadcrumbLabel = firstSegment
-    ? firstSegment.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+    ? firstSegment
+        .split('-')
+        .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(' ')
     : null
 
   return (

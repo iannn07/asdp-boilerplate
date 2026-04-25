@@ -10,9 +10,7 @@ import { Input } from '@/components/ui/input'
 import { useTranslation } from '@/lib/i18n/useTranslation'
 import { NAV_GROUPS } from '../_components/DocsSidebar'
 
-const ALL_COMPONENTS = NAV_GROUPS.flatMap(g =>
-  g.items.map(item => ({ ...item, groupKey: g.titleKey }))
-)
+const ALL_COMPONENTS = NAV_GROUPS.flatMap(g => g.items.map(item => ({ ...item, groupKey: g.titleKey })))
 
 export default function DocsIndexPage() {
   const [query, setQuery] = useState('')
@@ -43,11 +41,10 @@ export default function DocsIndexPage() {
 
       {groups.map(groupKey => {
         const items = filtered.filter(c => c.groupKey === groupKey)
+
         return (
           <div key={groupKey} className='space-y-3'>
-            <h2 className='text-sm font-semibold uppercase tracking-wider text-muted-foreground'>
-              {t(groupKey)}
-            </h2>
+            <h2 className='text-sm font-semibold uppercase tracking-wider text-muted-foreground'>{t(groupKey)}</h2>
             <div className='grid gap-3 sm:grid-cols-2 lg:grid-cols-3'>
               {items.map(item => (
                 <Link

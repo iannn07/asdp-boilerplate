@@ -11,8 +11,7 @@ function shouldLog(level: LogLevel): boolean {
 function format(level: LogLevel, context: string, message: string): string {
   const ts = new Date().toISOString()
 
-  
-return `[${ts}] [${level.toUpperCase()}] [${context}] ${message}`
+  return `[${ts}] [${level.toUpperCase()}] [${context}] ${message}`
 }
 
 export function createLogger(context: string) {

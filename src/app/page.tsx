@@ -30,8 +30,8 @@ export default function Home() {
         <div className='space-y-4'>
           <h1 className='text-4xl font-bold tracking-tight'>ASDP Core Engine</h1>
           <p className='text-lg text-muted-foreground'>
-            A production-ready Next.js boilerplate with shadcn/ui, TailwindCSS, TanStack Table, and Zustand.
-            Start building features immediately.
+            A production-ready Next.js boilerplate with shadcn/ui, TailwindCSS, TanStack Table, and Zustand. Start
+            building features immediately.
           </p>
         </div>
 

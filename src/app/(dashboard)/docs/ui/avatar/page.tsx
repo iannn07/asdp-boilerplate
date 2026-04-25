@@ -2,14 +2,7 @@
 
 import { useTranslation } from '@/lib/i18n/useTranslation'
 
-import {
-  Avatar,
-  AvatarBadge,
-  AvatarFallback,
-  AvatarGroup,
-  AvatarGroupCount,
-  AvatarImage
-} from '@/components/ui/avatar'
+import { Avatar, AvatarBadge, AvatarFallback, AvatarGroup, AvatarGroupCount, AvatarImage } from '@/components/ui/avatar'
 import { Callout } from '../../_components/Callout'
 import { ComponentPreview } from '../../_components/ComponentPreview'
 import { CompositionTree } from '../../_components/CompositionTree'
@@ -46,23 +39,20 @@ export default function AvatarPage() {
     <div className='space-y-10'>
       <div>
         <h1 className='text-3xl font-bold tracking-tight'>Avatar</h1>
-        <p className='mt-2 text-muted-foreground'>
-          {t('docs.avatar.desc')}
-        </p>
+        <p className='mt-2 text-muted-foreground'>{t('docs.avatar.desc')}</p>
         <p className='mt-1 text-xs text-muted-foreground'>
           {t('docs.source')}: <code className='rounded bg-muted px-1 py-0.5'>src/components/ui/avatar.tsx</code>
         </p>
       </div>
 
       <Callout variant='info'>
-        {t('docs.alsoAvailableAs')} <code className='rounded bg-muted px-1 py-0.5 text-xs'>@/components/atoms/Avatar</code> {t('docs.reexportNote')}
+        {t('docs.alsoAvailableAs')}{' '}
+        <code className='rounded bg-muted px-1 py-0.5 text-xs'>@/components/atoms/Avatar</code> {t('docs.reexportNote')}
       </Callout>
 
       <section className='space-y-4'>
         <h2 className='text-xl font-semibold'>{t('docs.whenToUse')}</h2>
-        <p className='text-sm text-muted-foreground'>
-          {t('docs.avatar.whenToUse')}
-        </p>
+        <p className='text-sm text-muted-foreground'>{t('docs.avatar.whenToUse')}</p>
       </section>
 
       <section className='space-y-4'>
@@ -142,9 +132,7 @@ export function AvatarSizes() {
 
         <div className='space-y-2'>
           <h3 className='text-base font-medium'>Badge</h3>
-          <p className='text-sm text-muted-foreground'>
-            {t('docs.avatar.badgeDesc')}
-          </p>
+          <p className='text-sm text-muted-foreground'>{t('docs.avatar.badgeDesc')}</p>
           <ComponentPreview
             code={`import { Avatar, AvatarBadge, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
@@ -217,9 +205,7 @@ export function AvatarGroupDemo() {
 
         <div className='space-y-2'>
           <h3 className='text-base font-medium'>Fallback</h3>
-          <p className='text-sm text-muted-foreground'>
-            {t('docs.avatar.fallbackDesc')}
-          </p>
+          <p className='text-sm text-muted-foreground'>{t('docs.avatar.fallbackDesc')}</p>
           <ComponentPreview
             code={`import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 

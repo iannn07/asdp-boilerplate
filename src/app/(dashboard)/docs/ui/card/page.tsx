@@ -3,16 +3,7 @@
 import { useTranslation } from '@/lib/i18n/useTranslation'
 
 import { Button } from '@/components/ui/button'
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle
-} from '@/components/ui/card'
-import { Callout } from '../../_components/Callout'
+import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { ComponentPreview } from '../../_components/ComponentPreview'
 import { CompositionTree } from '../../_components/CompositionTree'
 import { ImportBlock } from '../../_components/ImportBlock'
@@ -38,9 +29,7 @@ export default function CardPage() {
     <div className='space-y-10'>
       <div>
         <h1 className='text-3xl font-bold tracking-tight'>Card</h1>
-        <p className='mt-2 text-muted-foreground'>
-          {t('docs.card.desc')}
-        </p>
+        <p className='mt-2 text-muted-foreground'>{t('docs.card.desc')}</p>
         <p className='mt-1 text-xs text-muted-foreground'>
           {t('docs.source')}: <code className='rounded bg-muted px-1 py-0.5'>src/components/ui/card.tsx</code>
         </p>
@@ -48,9 +37,7 @@ export default function CardPage() {
 
       <section className='space-y-4'>
         <h2 className='text-xl font-semibold'>{t('docs.whenToUse')}</h2>
-        <p className='text-sm text-muted-foreground'>
-          {t('docs.card.whenToUse')}
-        </p>
+        <p className='text-sm text-muted-foreground'>{t('docs.card.whenToUse')}</p>
       </section>
 
       <section className='space-y-4'>

@@ -24,9 +24,7 @@ export default function SkeletonPage() {
 
       <section className='space-y-3'>
         <h2 className='text-xl font-semibold'>{t('docs.whenToUse')}</h2>
-        <p className='text-sm text-muted-foreground'>
-          {t('docs.skeleton.whenToUse')}
-        </p>
+        <p className='text-sm text-muted-foreground'>{t('docs.skeleton.whenToUse')}</p>
       </section>
 
       <section className='space-y-4'>
@@ -62,9 +60,7 @@ export function SkeletonDefault() {
 
         <div className='space-y-2'>
           <h3 className='text-base font-medium'>Card Skeleton</h3>
-          <p className='text-sm text-muted-foreground'>
-            {t('docs.skeleton.cardSkeletonDesc')}
-          </p>
+          <p className='text-sm text-muted-foreground'>{t('docs.skeleton.cardSkeletonDesc')}</p>
           <ComponentPreview
             code={`import { Skeleton } from "@/components/atoms/Skeleton"
 

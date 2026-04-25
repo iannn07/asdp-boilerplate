@@ -19,9 +19,7 @@ export default function SeparatorPage() {
     <div className='space-y-10'>
       <div>
         <h1 className='text-3xl font-bold tracking-tight'>Separator</h1>
-        <p className='mt-2 text-muted-foreground'>
-          {t('docs.separator.desc')}
-        </p>
+        <p className='mt-2 text-muted-foreground'>{t('docs.separator.desc')}</p>
         <p className='mt-1 text-xs text-muted-foreground'>
           {t('docs.source')}: <code className='rounded bg-muted px-1 py-0.5'>src/components/ui/separator.tsx</code>
         </p>
@@ -29,9 +27,7 @@ export default function SeparatorPage() {
 
       <section className='space-y-4'>
         <h2 className='text-xl font-semibold'>{t('docs.whenToUse')}</h2>
-        <p className='text-sm text-muted-foreground'>
-          {t('docs.separator.whenToUse')}
-        </p>
+        <p className='text-sm text-muted-foreground'>{t('docs.separator.whenToUse')}</p>
       </section>
 
       <section className='space-y-4'>

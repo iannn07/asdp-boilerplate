@@ -1,8 +1,8 @@
 'use client'
 
-import { useTranslation } from '@/lib/i18n/useTranslation'
-
 import Link from 'next/link'
+
+import { useTranslation } from '@/lib/i18n/useTranslation'
 
 import { Button } from '@/components/atoms/Button'
 import { Callout } from '../../_components/Callout'
@@ -13,17 +13,41 @@ import { PropsTable } from '../../_components/PropsTable'
 const PROPS = [
   { prop: 'loading', type: 'boolean', default: 'false' },
   { prop: 'disabled', type: 'boolean', default: 'false' },
-  { prop: 'variant', type: '"default" | "outline" | "secondary" | "ghost" | "destructive" | "link"', default: '"default"' },
-  { prop: 'size', type: '"default" | "xs" | "sm" | "lg" | "icon" | "icon-xs" | "icon-sm" | "icon-lg"', default: '"default"' },
+  {
+    prop: 'variant',
+    type: '"default" | "outline" | "secondary" | "ghost" | "destructive" | "link"',
+    default: '"default"'
+  },
+  {
+    prop: 'size',
+    type: '"default" | "xs" | "sm" | "lg" | "icon" | "icon-xs" | "icon-sm" | "icon-lg"',
+    default: '"default"'
+  },
   { prop: 'ref', type: 'Ref<HTMLButtonElement>', default: '-' },
   { prop: 'children', type: 'ReactNode', default: '-' }
 ]
 
 const COMPARISON_KEYS = [
-  { feature: 'docs.buttonAtom.compLoadingSpinner', primitive: 'docs.buttonAtom.compLoadingSpinnerPrimitive', atom: 'docs.buttonAtom.compLoadingSpinnerAtom' },
-  { feature: 'docs.buttonAtom.compAutoDisable', primitive: 'docs.buttonAtom.compAutoDisablePrimitive', atom: 'docs.buttonAtom.compAutoDisableAtom' },
-  { feature: 'docs.buttonAtom.compRefForwarding', primitive: 'docs.buttonAtom.compRefForwardingPrimitive', atom: 'docs.buttonAtom.compRefForwardingAtom' },
-  { feature: 'docs.buttonAtom.compUseIn', primitive: 'docs.buttonAtom.compUseInPrimitive', atom: 'docs.buttonAtom.compUseInAtom' }
+  {
+    feature: 'docs.buttonAtom.compLoadingSpinner',
+    primitive: 'docs.buttonAtom.compLoadingSpinnerPrimitive',
+    atom: 'docs.buttonAtom.compLoadingSpinnerAtom'
+  },
+  {
+    feature: 'docs.buttonAtom.compAutoDisable',
+    primitive: 'docs.buttonAtom.compAutoDisablePrimitive',
+    atom: 'docs.buttonAtom.compAutoDisableAtom'
+  },
+  {
+    feature: 'docs.buttonAtom.compRefForwarding',
+    primitive: 'docs.buttonAtom.compRefForwardingPrimitive',
+    atom: 'docs.buttonAtom.compRefForwardingAtom'
+  },
+  {
+    feature: 'docs.buttonAtom.compUseIn',
+    primitive: 'docs.buttonAtom.compUseInPrimitive',
+    atom: 'docs.buttonAtom.compUseInAtom'
+  }
 ]
 
 export default function ButtonAtomPage() {
@@ -45,8 +69,7 @@ export default function ButtonAtomPage() {
       </div>
 
       <Callout variant='recommendation'>
-        <strong>{t('docs.recommendedForApp')}</strong>{' '}
-        {t('docs.recommendedForAppDesc')}{' '}
+        <strong>{t('docs.recommendedForApp')}</strong> {t('docs.recommendedForAppDesc')}{' '}
         <Link href='/docs/ui/button' className='underline underline-offset-2'>
           Button primitive
         </Link>
@@ -54,9 +77,7 @@ export default function ButtonAtomPage() {
 
       <section className='space-y-4'>
         <h2 className='text-xl font-semibold'>{t('docs.whenToUse')}</h2>
-        <p className='text-sm text-muted-foreground'>
-          {t('docs.buttonAtom.whenToUse')}
-        </p>
+        <p className='text-sm text-muted-foreground'>{t('docs.buttonAtom.whenToUse')}</p>
       </section>
 
       <section className='space-y-4'>
@@ -106,9 +127,7 @@ export function ButtonDefault() {
 
         <div className='space-y-2'>
           <h3 className='text-base font-medium'>Loading</h3>
-          <p className='text-sm text-muted-foreground'>
-            {t('docs.buttonAtom.loadingDesc')}
-          </p>
+          <p className='text-sm text-muted-foreground'>{t('docs.buttonAtom.loadingDesc')}</p>
           <ComponentPreview
             code={`import { Button } from "@/components/atoms/Button"
 
@@ -122,9 +141,7 @@ export function ButtonLoading() {
 
         <div className='space-y-2'>
           <h3 className='text-base font-medium'>Loading with Async Handler</h3>
-          <p className='text-sm text-muted-foreground'>
-            {t('docs.buttonAtom.asyncDesc')}
-          </p>
+          <p className='text-sm text-muted-foreground'>{t('docs.buttonAtom.asyncDesc')}</p>
           <ComponentPreview
             code={`'use client'
 
@@ -170,9 +187,15 @@ export function ButtonLoadingVariants() {
           >
             <div className='flex gap-3'>
               <Button loading>Default</Button>
-              <Button loading variant='outline'>Outline</Button>
-              <Button loading variant='secondary'>Secondary</Button>
-              <Button loading variant='destructive'>Destructive</Button>
+              <Button loading variant='outline'>
+                Outline
+              </Button>
+              <Button loading variant='secondary'>
+                Secondary
+              </Button>
+              <Button loading variant='destructive'>
+                Destructive
+              </Button>
             </div>
           </ComponentPreview>
         </div>

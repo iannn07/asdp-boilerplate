@@ -1,7 +1,7 @@
 export function capitalize(str: string): string {
   if (!str) return str
-  
-return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
+
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
 }
 
 export function titleCase(str: string): string {
@@ -19,8 +19,8 @@ export function slugify(str: string): string {
 
 export function truncate(str: string, maxLength: number, suffix = '…'): string {
   if (str.length <= maxLength) return str
-  
-return str.slice(0, maxLength - suffix.length).trimEnd() + suffix
+
+  return str.slice(0, maxLength - suffix.length).trimEnd() + suffix
 }
 
 export function initials(name: string, max = 2): string {

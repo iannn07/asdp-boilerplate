@@ -1,8 +1,8 @@
 'use client'
 
-import { useTranslation } from '@/lib/i18n/useTranslation'
-
 import { IconTrendingUp, IconUsers, IconCurrencyDollar } from '@tabler/icons-react'
+
+import { useTranslation } from '@/lib/i18n/useTranslation'
 
 import { StatCard } from '@/components/molecules/StatCard'
 import { ComponentPreview } from '../../_components/ComponentPreview'
@@ -23,19 +23,16 @@ export default function StatCardPage() {
     <div className='space-y-10'>
       <div>
         <h1 className='text-3xl font-bold tracking-tight'>Stat Card</h1>
-        <p className='mt-2 text-muted-foreground'>
-          {t('docs.statCard.desc')}
-        </p>
+        <p className='mt-2 text-muted-foreground'>{t('docs.statCard.desc')}</p>
         <p className='mt-1 text-xs text-muted-foreground'>
-          {t('docs.source')}: <code className='rounded bg-muted px-1 py-0.5'>src/components/molecules/StatCard.tsx</code>
+          {t('docs.source')}:{' '}
+          <code className='rounded bg-muted px-1 py-0.5'>src/components/molecules/StatCard.tsx</code>
         </p>
       </div>
 
       <section className='space-y-3'>
         <h2 className='text-xl font-semibold'>{t('docs.whenToUse')}</h2>
-        <p className='text-sm text-muted-foreground'>
-          {t('docs.statCard.whenToUse')}
-        </p>
+        <p className='text-sm text-muted-foreground'>{t('docs.statCard.whenToUse')}</p>
       </section>
 
       <section className='space-y-4'>

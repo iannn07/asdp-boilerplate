@@ -1,5 +1,6 @@
 'use client'
 import { useMemo } from 'react'
+
 import { createColumnHelper } from '@tanstack/react-table'
 
 import { DataTable } from '@/components/organisms/DataTable'

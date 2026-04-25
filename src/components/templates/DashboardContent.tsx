@@ -6,12 +6,7 @@ export function DashboardContent({ children }: { children: React.ReactNode }) {
   const sidebarOpen = useUIStore(s => s.sidebarOpen)
 
   return (
-    <div
-      className={cn(
-        'flex flex-1 flex-col transition-all duration-300',
-        sidebarOpen ? 'pl-56' : 'pl-0'
-      )}
-    >
+    <div className={cn('flex flex-1 flex-col transition-all duration-300', sidebarOpen ? 'pl-56' : 'pl-0')}>
       {children}
     </div>
   )

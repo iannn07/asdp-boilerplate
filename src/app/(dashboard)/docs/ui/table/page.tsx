@@ -52,9 +52,7 @@ export default function TablePage() {
 
       <section className='space-y-4'>
         <h2 className='text-xl font-semibold'>{t('docs.whenToUse')}</h2>
-        <p className='text-sm text-muted-foreground'>
-          {t('docs.table.whenToUse')}
-        </p>
+        <p className='text-sm text-muted-foreground'>{t('docs.table.whenToUse')}</p>
       </section>
 
       <section className='space-y-4'>
@@ -169,10 +167,7 @@ export function TableDemo() {
 
       <section className='space-y-4'>
         <h2 className='text-xl font-semibold'>{t('docs.apiReference')}</h2>
-        <PropsTable
-          title='Table'
-          data={[{ prop: 'className', type: 'string', default: '-' }]}
-        />
+        <PropsTable title='Table' data={[{ prop: 'className', type: 'string', default: '-' }]} />
       </section>
     </div>
   )

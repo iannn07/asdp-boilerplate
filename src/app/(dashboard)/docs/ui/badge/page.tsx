@@ -9,7 +9,11 @@ import { ImportBlock } from '../../_components/ImportBlock'
 import { PropsTable } from '../../_components/PropsTable'
 
 const PROPS = [
-  { prop: 'variant', type: '"default" | "secondary" | "destructive" | "outline" | "ghost" | "link"', default: '"default"' },
+  {
+    prop: 'variant',
+    type: '"default" | "secondary" | "destructive" | "outline" | "ghost" | "link"',
+    default: '"default"'
+  },
   { prop: 'className', type: 'string', default: '-' }
 ]
 
@@ -20,23 +24,20 @@ export default function BadgePage() {
     <div className='space-y-10'>
       <div>
         <h1 className='text-3xl font-bold tracking-tight'>Badge</h1>
-        <p className='mt-2 text-muted-foreground'>
-          {t('docs.badge.desc')}
-        </p>
+        <p className='mt-2 text-muted-foreground'>{t('docs.badge.desc')}</p>
         <p className='mt-1 text-xs text-muted-foreground'>
           {t('docs.source')}: <code className='rounded bg-muted px-1 py-0.5'>src/components/ui/badge.tsx</code>
         </p>
       </div>
 
       <Callout variant='info'>
-        {t('docs.alsoAvailableAs')} <code className='rounded bg-muted px-1 py-0.5 text-xs'>@/components/atoms/Badge</code> {t('docs.reexportNote')}
+        {t('docs.alsoAvailableAs')}{' '}
+        <code className='rounded bg-muted px-1 py-0.5 text-xs'>@/components/atoms/Badge</code> {t('docs.reexportNote')}
       </Callout>
 
       <section className='space-y-4'>
         <h2 className='text-xl font-semibold'>{t('docs.whenToUse')}</h2>
-        <p className='text-sm text-muted-foreground'>
-          {t('docs.badge.whenToUse')}
-        </p>
+        <p className='text-sm text-muted-foreground'>{t('docs.badge.whenToUse')}</p>
       </section>
 
       <section className='space-y-4'>
