@@ -22,7 +22,7 @@ export async function createUserAction(
 
     const user = await api.post<User>('/users', input)
 
-    revalidateTag('users')
+    revalidateTag('users', 'max')
 
     return { success: true, data: user }
   } catch (err) {

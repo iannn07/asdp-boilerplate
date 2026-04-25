@@ -1,25 +1,23 @@
 'use client'
-import { useRouter } from 'next/navigation'
 
 import { Button } from '@/components/atoms/Button'
-import { LOCALE_COOKIE, type Locale } from '@/lib/i18n/shared'
+import { useUIStore } from '@/store/ui.store'
+import type { Locale } from '@/lib/i18n/shared'
 
-type LocaleSwitcherProps = { currentLocale: Locale }
+export function LocaleSwitcher() {
+  const locale = useUIStore(s => s.locale)
+  const setLocale = useUIStore(s => s.setLocale)
 
-export function LocaleSwitcher({ currentLocale }: LocaleSwitcherProps) {
-  const router = useRouter()
-
-  const switchLocale = (locale: Locale) => {
-    document.cookie = `${LOCALE_COOKIE}=${locale}; path=/; max-age=31536000`
-    router.refresh()
+  const switchLocale = (next: Locale) => {
+    setLocale(next)
   }
 
   return (
     <div className='flex gap-1'>
-      <Button variant={currentLocale === 'id' ? 'default' : 'ghost'} size='sm' onClick={() => switchLocale('id')}>
+      <Button variant={locale === 'id' ? 'default' : 'ghost'} size='sm' onClick={() => switchLocale('id')}>
         ID
       </Button>
-      <Button variant={currentLocale === 'en' ? 'default' : 'ghost'} size='sm' onClick={() => switchLocale('en')}>
+      <Button variant={locale === 'en' ? 'default' : 'ghost'} size='sm' onClick={() => switchLocale('en')}>
         EN
       </Button>
     </div>

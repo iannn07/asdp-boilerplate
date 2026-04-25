@@ -19,14 +19,9 @@ export default defineConfig({
       include: ['src/**/*.{ts,tsx}'],
       exclude: ['src/**/__tests__/**', 'src/components/ui/**', 'src/app/api/**'],
     },
-    environmentMatchGlobs: [
-      ['src/lib/__tests__/env.test.ts', 'node'],
-      ['src/lib/api/**', 'node'],
-      ['src/lib/i18n/**', 'node'],
-      ['src/lib/auth/**', 'node'],
-      ['src/lib/query/__tests__/client.test.ts', 'node'],
-      ['src/lib/security/**', 'node'],
-    ],
+    env: {
+      NODE_ENV: 'test',
+    },
   },
   resolve: {
     alias: { '@': resolve(__dirname, './src') },

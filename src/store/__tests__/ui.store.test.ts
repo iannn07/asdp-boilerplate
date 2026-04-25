@@ -4,7 +4,7 @@ import { act, renderHook } from '@testing-library/react'
 import { useUIStore } from '../ui.store'
 
 beforeEach(() => {
-  useUIStore.setState({ sidebarOpen: true, theme: 'system' })
+  useUIStore.setState({ sidebarOpen: true, locale: 'en' })
 })
 
 describe('useUIStore', () => {
@@ -15,10 +15,10 @@ describe('useUIStore', () => {
     expect(result.current.sidebarOpen).toBe(false)
   })
 
-  it('sets theme', () => {
+  it('sets locale', () => {
     const { result } = renderHook(() => useUIStore())
 
-    act(() => result.current.setTheme('dark'))
-    expect(result.current.theme).toBe('dark')
+    act(() => result.current.setLocale('id'))
+    expect(result.current.locale).toBe('id')
   })
 })

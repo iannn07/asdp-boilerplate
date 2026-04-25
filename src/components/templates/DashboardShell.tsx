@@ -1,20 +1,15 @@
 import { Navbar } from '@/components/organisms/Navbar'
 import { Sidebar } from '@/components/organisms/Sidebar'
-import type { Locale } from '@/lib/i18n/shared'
+import { DashboardContent } from './DashboardContent'
 
-type DashboardShellProps = {
-  children: React.ReactNode
-  locale: Locale
-}
-
-export function DashboardShell({ children, locale }: DashboardShellProps) {
+export function DashboardShell({ children }: { children: React.ReactNode }) {
   return (
     <div className='flex min-h-screen'>
       <Sidebar />
-      <div className='flex flex-1 flex-col pl-56 transition-all duration-300'>
-        <Navbar locale={locale} />
+      <DashboardContent>
+        <Navbar />
         <main className='flex-1 p-6'>{children}</main>
-      </div>
+      </DashboardContent>
     </div>
   )
 }

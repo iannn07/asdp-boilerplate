@@ -9,9 +9,11 @@ import {
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { Button } from '@/components/atoms/Button'
+import { useTranslation } from '@/lib/i18n/useTranslation'
 
 type DataTableProps<TData> = {
-  columns: ColumnDef<TData, unknown>[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  columns: ColumnDef<TData, any>[]
   data: TData[]
   emptyMessage?: string
   pageSize?: number
@@ -20,7 +22,7 @@ type DataTableProps<TData> = {
 export function DataTable<TData>({
   columns,
   data,
-  emptyMessage = 'No results.',
+  emptyMessage,
   pageSize = 10
 }: DataTableProps<TData>) {
   const table = useReactTable({
@@ -30,6 +32,8 @@ export function DataTable<TData>({
     getPaginationRowModel: getPaginationRowModel(),
     initialState: { pagination: { pageSize } }
   })
+
+  const { t } = useTranslation()
 
   return (
     <div className='space-y-4'>
@@ -58,7 +62,7 @@ export function DataTable<TData>({
             ) : (
               <TableRow>
                 <TableCell colSpan={columns.length} className='h-24 text-center'>
-                  {emptyMessage}
+                  {emptyMessage ?? t('common.noResults')}
                 </TableCell>
               </TableRow>
             )}
@@ -67,10 +71,10 @@ export function DataTable<TData>({
       </div>
       <div className='flex items-center justify-end gap-2'>
         <Button variant='outline' size='sm' onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
-          Previous
+          {t('common.previous')}
         </Button>
         <Button variant='outline' size='sm' onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
-          Next
+          {t('common.next')}
         </Button>
       </div>
     </div>

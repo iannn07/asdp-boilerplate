@@ -2,6 +2,7 @@ import { queryOptions } from '@tanstack/react-query'
 
 import { api } from '@/lib/api'
 import type { User } from '../types'
+import { dummyUsers } from '../data/dummy'
 
 export const userKeys = {
   all: ['users'] as const,
@@ -9,9 +10,18 @@ export const userKeys = {
   detail: (id: string) => [...userKeys.all, 'detail', id] as const
 }
 
+async function fetchUsersWithFallback(): Promise<User[]> {
+  try {
+    return await api.get<User[]>('/users')
+  } catch {
+    return dummyUsers
+  }
+}
+
 export const usersQueryOptions = queryOptions({
   queryKey: userKeys.list(),
-  queryFn: () => api.get<User[]>('/users')
+  queryFn: fetchUsersWithFallback,
+  retry: false
 })
 
 export const userDetailQueryOptions = (id: string) =>

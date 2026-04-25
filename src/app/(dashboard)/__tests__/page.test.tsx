@@ -8,7 +8,7 @@ vi.mock('@/components/molecules/StatCard', () => ({
   StatCard: ({ title }: { title: string }) => <div>{title}</div>
 }))
 
-import DashboardPage from '../page'
+import DashboardPage from '../dashboard/page'
 
 describe('DashboardPage', () => {
   it('renders Dashboard heading', () => {

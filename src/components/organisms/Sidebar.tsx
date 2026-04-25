@@ -2,23 +2,24 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import { LayoutDashboard, Users, BarChart2, Settings } from 'lucide-react'
+import { IconComponents, IconLayoutDashboard, IconUsers } from '@tabler/icons-react'
 
 import { cn } from '@/lib/cn'
+import { useTranslation } from '@/lib/i18n/useTranslation'
 import { useUIStore } from '@/store/ui.store'
 
-type NavItem = { href: string; label: string; icon: React.ReactNode }
+type NavItem = { href: string; labelKey: string; icon: React.ReactNode }
 
 const navItems: NavItem[] = [
-  { href: '/dashboard', label: 'Dashboard', icon: <LayoutDashboard className='h-4 w-4' /> },
-  { href: '/dashboard/users', label: 'Users', icon: <Users className='h-4 w-4' /> },
-  { href: '/dashboard/reports', label: 'Reports', icon: <BarChart2 className='h-4 w-4' /> },
-  { href: '/dashboard/settings', label: 'Settings', icon: <Settings className='h-4 w-4' /> }
+  { href: '/dashboard', labelKey: 'nav.dashboard', icon: <IconLayoutDashboard className='h-4 w-4' /> },
+  { href: '/users', labelKey: 'nav.users', icon: <IconUsers className='h-4 w-4' /> },
+  { href: '/docs/ui', labelKey: 'nav.docs', icon: <IconComponents className='h-4 w-4' /> }
 ]
 
 export function Sidebar() {
   const sidebarOpen = useUIStore(s => s.sidebarOpen)
   const pathname = usePathname()
+  const { t } = useTranslation()
 
   return (
     <aside
@@ -37,11 +38,11 @@ export function Sidebar() {
             href={item.href}
             className={cn(
               'flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground',
-              pathname === item.href && 'bg-accent text-accent-foreground'
+              (pathname === item.href || pathname.startsWith(item.href + '/')) && 'bg-accent text-accent-foreground'
             )}
           >
             {item.icon}
-            {item.label}
+            {t(item.labelKey)}
           </Link>
         ))}
       </nav>

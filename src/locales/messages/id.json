@@ -6,7 +6,18 @@
     "edit": "Ubah",
     "loading": "Memuat...",
     "error": "Terjadi kesalahan",
-    "search": "Cari"
+    "search": "Cari",
+    "previous": "Sebelumnya",
+    "next": "Berikutnya",
+    "noResults": "Tidak ada hasil.",
+    "noUsersFound": "Pengguna tidak ditemukan.",
+    "welcome": "Selamat datang di ASDP Core Engine",
+    "totalUsers": "Total Pengguna",
+    "reports": "Laporan",
+    "activeSessions": "Sesi Aktif",
+    "manageSystemUsers": "Kelola pengguna sistem",
+    "failedLoadUsers": "Gagal memuat pengguna. Pastikan API dapat diakses.",
+    "created": "Dibuat"
   },
   "auth": {
     "login": "Masuk",
@@ -26,6 +37,142 @@
     "dashboard": "Dasbor",
     "users": "Pengguna",
     "reports": "Laporan",
-    "settings": "Pengaturan"
+    "settings": "Pengaturan",
+    "docs": "Dokumentasi Komponen"
+  },
+  "docs": {
+    "components": "Komponen",
+    "primitives": "Primitif",
+    "custom": "Kustom",
+    "searchComponents": "Cari komponen...",
+    "noComponentsFound": "Tidak ada komponen yang cocok dengan",
+    "browseDescription": "Jelajahi semua komponen UI yang tersedia. Setiap halaman mencakup pratinjau langsung, contoh penggunaan, dan referensi API.",
+    "whenToUse": "Kapan Digunakan",
+    "usage": "Penggunaan",
+    "composition": "Komposisi",
+    "examples": "Contoh",
+    "apiReference": "Referensi API",
+    "dependencies": "Dependensi",
+    "differenceFromPrimitive": "Perbedaan dari Primitif",
+    "source": "Sumber",
+    "showCode": "Tampilkan Kode",
+    "hideCode": "Sembunyikan Kode",
+    "feature": "Fitur",
+    "primitiveCol": "Primitif (ui/button)",
+    "atomCol": "Atom (atoms/Button)",
+    "extendsAllProps": "Memperluas semua prop dari primitif Button ditambah berikut ini:",
+    "recommendedForApp": "Direkomendasikan untuk kode aplikasi.",
+    "recommendedForAppDesc": "Gunakan impor ini untuk semua halaman, fitur, dan modul. Primitif Button mentah hanya boleh digunakan saat membuat atom atau molekul baru yang dapat digunakan kembali.",
+    "designSystemPrimitive": "Ini adalah primitif sistem desain.",
+    "designSystemPrimitiveDesc": "Jangan modifikasi file ini secara langsung — ini adalah lapisan token desain yang dihasilkan oleh shadcn. Untuk kode aplikasi (halaman, fitur, modul), gunakan Button Atom yang menambahkan status loading dan ref forwarding.",
+    "alsoAvailableAs": "Juga tersedia sebagai",
+    "reexportNote": "— ekspor ulang untuk konsistensi dengan pola impor desain atomik. Tidak ada fungsionalitas tambahan.",
+    "useSizeProp": "Gunakan prop size untuk mengubah ukuran.",
+    "useVariantProp": "Gunakan prop variant untuk mengubah gaya.",
+    "button": {
+      "desc": "Menampilkan tombol atau komponen yang terlihat seperti tombol. Ini adalah primitif shadcn/ui mentah yang dibangun di atas @base-ui/react/button dengan styling berbasis CVA.",
+      "whenToUse": "Gunakan primitif ini secara langsung hanya saat membuat atom atau molekul baru yang dapat digunakan kembali di dalam src/components/. Untuk semua tombol tingkat aplikasi, impor dari @/components/atoms/Button sebagai gantinya."
+    },
+    "buttonAtom": {
+      "desc": "Pembungkus tombol tingkat aplikasi yang memperluas primitif Button dengan spinner loading, nonaktif otomatis saat loading, dan ref forwarding.",
+      "whenToUse": "Gunakan ini untuk setiap tombol dalam kode aplikasi — pengiriman formulir, pemicu aksi, navigasi. Ini membungkus primitif shadcn dengan perilaku tingkat aplikasi sehingga Anda tidak perlu mengatur spinner loading atau status nonaktif secara manual selama operasi async.",
+      "loadingDesc": "Prop loading merender Spinner dan secara otomatis menonaktifkan tombol.",
+      "asyncDesc": "Penggunaan umum dengan state React untuk mengubah loading selama operasi async.",
+      "compLoadingSpinner": "Spinner loading",
+      "compLoadingSpinnerPrimitive": "Tidak bawaan",
+      "compLoadingSpinnerAtom": "Prop loading menambahkan Spinner",
+      "compAutoDisable": "Nonaktif otomatis saat loading",
+      "compAutoDisablePrimitive": "Manual",
+      "compAutoDisableAtom": "Otomatis saat loading=true",
+      "compRefForwarding": "Ref forwarding",
+      "compRefForwardingPrimitive": "Tidak",
+      "compRefForwardingAtom": "Ya (forwardRef)",
+      "compUseIn": "Digunakan di",
+      "compUseInPrimitive": "Membuat atom/molekul baru",
+      "compUseInAtom": "Halaman dan fitur aplikasi"
+    },
+    "avatar": {
+      "desc": "Elemen gambar dengan fallback untuk merepresentasikan pengguna.",
+      "whenToUse": "Gunakan untuk menampilkan gambar profil pengguna, daftar anggota tim, atau entitas apa pun yang membutuhkan representasi visual dengan fallback teks. Kombinasikan dengan AvatarGroup untuk tampilan bertumpuk. Pasangkan dengan DropdownMenu untuk menu pengguna.",
+      "badgeDesc": "Gunakan AvatarBadge untuk menambahkan indikator status.",
+      "fallbackDesc": "Fallback ditampilkan saat gambar gagal dimuat atau tidak ada src yang diberikan."
+    },
+    "badge": {
+      "desc": "Menampilkan badge atau komponen yang terlihat seperti badge.",
+      "whenToUse": "Gunakan untuk indikator status, label, jumlah, atau tag. Umum di sel tabel (misalnya, peran pengguna, status pembayaran), item navigasi, dan header kartu. Pilih varian yang sesuai dengan makna semantik — destructive untuk error, secondary untuk label netral."
+    },
+    "card": {
+      "desc": "Menampilkan kartu dengan header, konten, dan footer.",
+      "whenToUse": "Gunakan untuk mengelompokkan konten terkait ke dalam wadah yang berbeda secara visual dengan jarak yang konsisten. Ideal untuk widget dasbor, panel pengaturan, dan bagian konten. Untuk tampilan metrik, gunakan molekul StatCard yang dibangun di atas Card."
+    },
+    "input": {
+      "desc": "Komponen input teks untuk formulir dan entri data pengguna dengan styling dan fitur aksesibilitas bawaan.",
+      "whenToUse": "Gunakan untuk input teks satu baris dalam formulir. Untuk field formulir lengkap dengan label dan penanganan error, gunakan molekul FormField sebagai gantinya. Untuk teks multi-baris, gunakan textarea native yang di-style dengan Tailwind."
+    },
+    "label": {
+      "desc": "Merender label yang dapat diakses yang terkait dengan kontrol.",
+      "whenToUse": "Gunakan untuk mengasosiasikan label yang dapat diakses dengan kontrol formulir. Untuk sebagian besar kasus, gunakan molekul FormField yang sudah menyertakan Label. Gunakan Label secara langsung saat membuat layout formulir kustom."
+    },
+    "separator": {
+      "desc": "Memisahkan konten secara visual atau semantik.",
+      "whenToUse": "Gunakan untuk membagi bagian konten secara visual. Separator horizontal berfungsi di antara blok konten bertumpuk. Separator vertikal berfungsi di antara item inline seperti tautan navigasi atau tombol toolbar."
+    },
+    "sheet": {
+      "desc": "Memperluas komponen Dialog untuk menampilkan konten yang melengkapi konten utama layar.",
+      "whenToUse": "Gunakan untuk konten sekunder yang melengkapi tampilan utama — filter, panel pengaturan, tampilan detail, atau navigasi mobile. Pilih Sheet daripada Dialog saat konten bersifat pelengkap dan tidak memerlukan keputusan sebelum melanjutkan."
+    },
+    "table": {
+      "desc": "Komponen tabel yang responsif.",
+      "whenToUse": "Gunakan untuk menampilkan data tabular terstruktur. Untuk data yang membutuhkan paginasi, pengurutan, atau manajemen kolom, gunakan organisme DataTable yang dibangun di atas primitif ini dengan TanStack Table. Gunakan Table mentah untuk tampilan data sederhana dan statis."
+    },
+    "tooltip": {
+      "desc": "Popup yang menampilkan informasi terkait elemen saat elemen menerima fokus keyboard atau mouse mengarah ke atasnya.",
+      "whenToUse": "Gunakan untuk memberikan konteks tambahan pada elemen UI saat hover/fokus. Ideal untuk tombol hanya ikon, teks terpotong, atau kontrol yang membutuhkan penjelasan singkat. Jaga teks tooltip tetap pendek — untuk konten yang lebih panjang, gunakan Popover.",
+      "positionsDesc": "Gunakan prop side untuk mengubah posisi tooltip."
+    },
+    "dropdownMenu": {
+      "desc": "Menampilkan menu kepada pengguna — seperti serangkaian aksi atau fungsi — yang dipicu oleh tombol.",
+      "whenToUse": "Gunakan untuk aksi kontekstual yang dipicu oleh tombol — menu pengguna, aksi baris di tabel, dropdown pengaturan. Untuk menu navigasi, gunakan NavigationMenu. Untuk palet perintah, gunakan Command."
+    },
+    "spinner": {
+      "desc": "Indikator yang dapat digunakan untuk menampilkan status loading.",
+      "whenToUse": "Gunakan sebagai indikator loading mandiri untuk bagian atau status loading seluruh halaman. Untuk tombol dengan status loading, gunakan Button Atom yang mengintegrasikan Spinner secara otomatis.",
+      "sizesDesc": "Gunakan prop size untuk mengubah ukuran spinner."
+    },
+    "skeleton": {
+      "desc": "Gunakan untuk menampilkan placeholder saat konten sedang dimuat.",
+      "whenToUse": "Gunakan sebagai status loading placeholder yang mencocokkan bentuk konten yang dimuat. Susun beberapa skeleton untuk membuat layout loading untuk kartu, daftar, dan profil. Pilih Skeleton daripada Spinner saat Anda ingin mempertahankan struktur layout selama loading.",
+      "cardSkeletonDesc": "Susun beberapa skeleton untuk membuat layout placeholder."
+    },
+    "formField": {
+      "desc": "Menggabungkan Label, Input, dan teks error menjadi satu field formulir yang dapat diakses.",
+      "whenToUse": "Gunakan untuk input formulir standar yang membutuhkan label dan penanganan error. Menggabungkan Label, Input, dan teks error dengan atribut aria yang tepat secara otomatis. Untuk input kustom (select, date picker), buat field Anda sendiri menggunakan Label + Input secara langsung.",
+      "errorDesc": "Berikan prop error untuk menampilkan error validasi.",
+      "nativePropsNote": "Memperluas semua prop native <input> ditambah berikut ini:"
+    },
+    "statCard": {
+      "desc": "Kartu metrik untuk menampilkan statistik utama dengan judul, nilai, deskripsi, dan ikon opsional.",
+      "whenToUse": "Gunakan untuk menampilkan metrik utama di dasbor — pendapatan, jumlah pengguna, tingkat pertumbuhan. Dibangun di atas primitif Card dengan layout standar untuk judul, nilai, deskripsi, dan ikon. Untuk layout kartu kustom, gunakan primitif Card secara langsung."
+    },
+    "themeToggle": {
+      "desc": "Tombol yang mengalihkan antara tema terang dan gelap menggunakan next-themes.",
+      "whenToUse": "Gunakan di bilah navigasi untuk memungkinkan pengguna beralih antara tema terang dan gelap. Membutuhkan ThemeProvider dari next-themes yang sudah dikonfigurasi di layout root (sudah dikonfigurasi di boilerplate ini).",
+      "depDesc": "Membutuhkan ThemeProvider next-themes yang dikonfigurasi di layout root. Komponen ini tidak memiliki prop — membaca dan menulis tema melalui hook useTheme."
+    },
+    "localeSwitcher": {
+      "desc": "Sepasang tombol toggle untuk beralih antara bahasa Indonesia (ID) dan Inggris (EN).",
+      "whenToUse": "Gunakan di bilah navigasi untuk memungkinkan pengguna beralih antara bahasa Indonesia (ID) dan Inggris (EN). Bahasa aktif dikelola oleh store Zustand UI dan dikonsumsi oleh sistem terjemahan i18n.",
+      "depDesc": "Membaca dan menulis bahasa melalui store Zustand useUIStore. Komponen ini tidak memiliki prop."
+    },
+    "pageHeader": {
+      "desc": "Header tingkat halaman dengan judul, deskripsi opsional, dan tombol aksi.",
+      "whenToUse": "Gunakan di bagian atas setiap halaman untuk memberikan judul yang konsisten, deskripsi opsional, dan tombol aksi. Ini adalah pola header halaman standar yang digunakan di seluruh boilerplate — lihat halaman Dasbor dan Pengguna untuk contoh nyata."
+    },
+    "dataTable": {
+      "desc": "Tabel dan datagrid yang powerful dibangun menggunakan TanStack Table dengan paginasi bawaan.",
+      "whenToUse": "Gunakan untuk data tabular yang membutuhkan paginasi sisi klien. Definisikan kolom menggunakan ColumnDef dari TanStack Table dan berikan data sebagai array. Untuk tabel read-only sederhana tanpa paginasi, gunakan primitif Table dasar secara langsung.",
+      "defaultDesc": "Definisikan kolom menggunakan ColumnDef dari TanStack Table dan berikan data sebagai array.",
+      "pageSizeDesc": "Gunakan pageSize untuk mengontrol baris per halaman."
+    }
   }
 }

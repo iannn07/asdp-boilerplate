@@ -9,7 +9,7 @@ import { DashboardShell } from '../DashboardShell'
 describe('DashboardShell', () => {
   it('renders children in main content area', () => {
     render(
-      <DashboardShell locale='en'>
+      <DashboardShell>
         <p>Content</p>
       </DashboardShell>
     )
@@ -18,7 +18,7 @@ describe('DashboardShell', () => {
 
   it('renders Sidebar and Navbar', () => {
     render(
-      <DashboardShell locale='en'>
+      <DashboardShell>
         <p>x</p>
       </DashboardShell>
     )

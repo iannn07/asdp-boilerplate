@@ -1,24 +1,28 @@
-import path from 'path'
-
-import i18nLib from 'i18n'
-
-import { locales, defaultLocale } from './shared'
 import type { Locale } from './shared'
 
-export { type Locale, locales, defaultLocale, LOCALE_COOKIE } from './shared'
+import en from '@/locales/messages/en.json'
+import id from '@/locales/messages/id.json'
 
-i18nLib.configure({
-  locales: [...locales],
-  defaultLocale,
-  directory: path.join(process.cwd(), 'src/locales/messages'),
-  objectNotation: true,
-  updateFiles: false
-})
+export { type Locale, locales, defaultLocale } from './shared'
 
-export function getI18n(locale: Locale) {
-  i18nLib.setLocale(locale)
+const messages: Record<Locale, Record<string, unknown>> = { en, id }
+
+function resolve(obj: Record<string, unknown>, key: string): string {
+  const parts = key.split('.')
+  let current: unknown = obj
+
+  for (const part of parts) {
+    if (current == null || typeof current !== 'object') return key
+    current = (current as Record<string, unknown>)[part]
+  }
+
+  return typeof current === 'string' ? current : key
+}
+
+export function getTranslations(locale: Locale) {
+  const dict = messages[locale] ?? messages.en
 
   return {
-    t: (key: string) => i18nLib.__(key)
+    t: (key: string) => resolve(dict, key)
   }
 }

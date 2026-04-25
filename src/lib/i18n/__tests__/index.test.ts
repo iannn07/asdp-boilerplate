@@ -1,33 +1,39 @@
 import { describe, it, expect } from 'vitest'
 
-import { getI18n, locales, defaultLocale } from '../index'
+import { getTranslations, locales, defaultLocale } from '../index'
 
-describe('getI18n', () => {
+describe('getTranslations', () => {
   it('translates a key in English', () => {
-    const { t } = getI18n('en')
+    const { t } = getTranslations('en')
 
     expect(t('common.save')).toBe('Save')
   })
 
   it('translates a key in Indonesian', () => {
-    const { t } = getI18n('id')
+    const { t } = getTranslations('id')
 
     expect(t('common.save')).toBe('Simpan')
   })
 
   it('translates nested auth keys', () => {
-    const { t } = getI18n('en')
+    const { t } = getTranslations('en')
 
     expect(t('auth.login')).toBe('Login')
+  })
+
+  it('returns the key for missing translations', () => {
+    const { t } = getTranslations('en')
+
+    expect(t('nonexistent.key')).toBe('nonexistent.key')
   })
 })
 
 describe('locale config', () => {
-  it('exports id and en locales', () => {
-    expect(locales).toEqual(['id', 'en'])
+  it('exports en and id locales', () => {
+    expect(locales).toEqual(['en', 'id'])
   })
 
-  it('defaults to id', () => {
-    expect(defaultLocale).toBe('id')
+  it('defaults to en', () => {
+    expect(defaultLocale).toBe('en')
   })
 })

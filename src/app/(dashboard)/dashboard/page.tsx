@@ -1,15 +1,19 @@
+'use client'
 import { Suspense } from 'react'
 
-import { Users, BarChart2, Activity } from 'lucide-react'
+import { IconUsers, IconChartBar, IconActivity } from '@tabler/icons-react'
 
 import { PageHeader } from '@/components/organisms/PageHeader'
 import { StatCard } from '@/components/molecules/StatCard'
 import { Skeleton } from '@/components/atoms/Skeleton'
+import { useTranslation } from '@/lib/i18n/useTranslation'
 
 export default function DashboardPage() {
+  const { t } = useTranslation()
+
   return (
     <div className='space-y-6'>
-      <PageHeader title='Dashboard' description='Welcome to ASDP Core Engine' />
+      <PageHeader title={t('nav.dashboard')} description={t('common.welcome')} />
       <Suspense
         fallback={
           <div className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
@@ -20,9 +24,9 @@ export default function DashboardPage() {
         }
       >
         <div className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
-          <StatCard title='Total Users' value='—' icon={<Users className='h-4 w-4 text-muted-foreground' />} />
-          <StatCard title='Reports' value='—' icon={<BarChart2 className='h-4 w-4 text-muted-foreground' />} />
-          <StatCard title='Active Sessions' value='—' icon={<Activity className='h-4 w-4 text-muted-foreground' />} />
+          <StatCard title={t('common.totalUsers')} value='—' icon={<IconUsers className='h-4 w-4 text-muted-foreground' />} />
+          <StatCard title={t('common.reports')} value='—' icon={<IconChartBar className='h-4 w-4 text-muted-foreground' />} />
+          <StatCard title={t('common.activeSessions')} value='—' icon={<IconActivity className='h-4 w-4 text-muted-foreground' />} />
         </div>
       </Suspense>
     </div>
