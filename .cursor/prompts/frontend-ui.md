@@ -27,14 +27,15 @@ Requirements:
 - Handle form validation client-side before submission
 - Show meaningful feedback for every user action (toast, inline message, state change)
 
-<!--
-  Example A (Java / Spring Boot + Google Stitch):
-  - Generate the component spec for Google Stitch using the UI states above
-  - Component names must match the spec entity names exactly
-  - After generation: review state logic against acceptance criteria before committing
-
-  Example B (Next.js / React + TailwindCSS):
-  - Use Server Components by default, 'use client' only for interactivity
-  - Style with TailwindCSS className (prefer over sx or inline styles)
-  - Use the project's established form library (React Hook Form, etc.)
--->
+**Project-specific guidance (ASDP Core Engine):**
+- Follow the Atomic Design hierarchy: atoms → molecules → organisms → templates
+- Icons from `@tabler/icons-react` — never `lucide-react`
+- Style exclusively with TailwindCSS `className` — never `sx` or inline style
+- Use `useTranslation()` hook from `src/lib/i18n/useTranslation.ts` for all user-facing strings
+- Use Server Components by default; `'use client'` only for interactivity (pushed to leaf nodes)
+- Use `cn()` from `src/lib/cn.ts` for conditional class merging
+- Forms use React Hook Form with `valibotResolver` — schema in `modules/[feature]/schemas/`
+- Data fetching via TanStack Query: `useQuery()` with `queryOptions` from `modules/[feature]/queries/`
+- Follow the reference pattern in `src/modules/users/` for module-level components
+- Feature-specific components live in `src/modules/[feature]/components/`, not in `src/components/`
+- Shared reusable components live in `src/components/` under the appropriate atomic layer

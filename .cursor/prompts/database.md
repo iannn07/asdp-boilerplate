@@ -18,14 +18,12 @@ Requirements:
 6. **Constraints**: NOT NULL, UNIQUE, CHECK constraints as specified
 7. **Access control**: Include row-level security policies or equivalent access control in the same migration
 
-<!--
-  Example A (Java / Spring Boot / Flyway):
-  Output a Flyway migration file: V[number]__create_[entity]_table.sql
-  Use PostgreSQL syntax.
-
-  Example B (Next.js / Supabase):
-  Output a Supabase migration file: [timestamp]_create_[entity]_table.sql
-  Include RLS policies. Use supabase CLI conventions.
--->
+**Project-specific guidance (ASDP Core Engine):**
+- The database layer is owned by the **backend team** — this frontend project does not manage migrations directly
+- The frontend communicates with the backend via a typed HTTP API client (`src/lib/api/`)
+- Section D of the DICE spec still defines the data model so both frontend and backend share the same entity understanding
+- When writing Section D, use PostgreSQL types (UUID, TEXT, TIMESTAMPTZ, etc.) for consistency with the backend
+- All tables must include `id` (UUID), `created_at`, `updated_at`, and `created_by` audit columns
+- The frontend derives TypeScript types from Section D and places them in `src/modules/[feature]/types/`
 
 The migration must be **additive only** — no DROP or ALTER on existing objects. If modifying an existing table, create a new migration file.

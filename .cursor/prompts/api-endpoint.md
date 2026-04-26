@@ -30,14 +30,11 @@ Implement in this order:
    - 409 — Conflict (duplicate, invalid state transition)
    - 500 — Unexpected error (log details, return generic message)
 
-<!--
-  Example A (Java / Spring Boot):
-  - Controller + Service + Repository layers
-  - Use @Valid for request DTO validation
-  - Use Spring Security annotations for auth
-
-  Example B (Next.js / TypeScript):
-  - API route handler or server action
-  - Use Zod/Valibot safeParse for validation
-  - Check session/JWT for auth
--->
+**Project-specific guidance (ASDP Core Engine):**
+- Use Next.js Server Actions (`'use server'`) in `src/modules/[feature]/actions/`
+- Validate input with Valibot `parse()` wrapped in try/catch (catches `ValiError`)
+- Auth is checked via `getAuthAdapter()` from `src/lib/auth/`
+- Return typed `ActionResult<T>`: `{ success: true; data: T } | { success: false; errors: Record<string, string> }`
+- Call `revalidateTag()` after successful mutations to bust cache
+- API calls go through the typed fetch wrapper in `src/lib/api/` (`api.get<T>`, `api.post<T>`, etc.)
+- Never import or use raw `fetch` in server actions — always use the `api` client

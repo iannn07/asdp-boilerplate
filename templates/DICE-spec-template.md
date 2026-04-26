@@ -1,5 +1,7 @@
 # [Module Name] — Feature Specification
 
+> **Tech Stack**: Next.js 16 / React 19 / TypeScript / TailwindCSS 4 / Shadcn UI / Zustand / TanStack Query + Table / Valibot / Vitest + Playwright — Frontend integrates with a separate backend API
+
 ## Status
 
 | Field       | Value          |
@@ -134,84 +136,13 @@ For every data-driven screen, define what the user sees in each state.
 
 <!--
   ═══════════════════════════════════════════════════════════
-  WORKED EXAMPLES — Delete these after using the template
+  WORKED EXAMPLE — Delete this after using the template
   ═══════════════════════════════════════════════════════════
 -->
 
 <!--
-  EXAMPLE A — Java / Spring Boot (ASDP: User Profile with Approval)
-  ─────────────────────────────────────────────────────────────────
-
-  ## D — Data Model
-
-  ### user_profile
-  | Field             | Type     | Required | Notes                             |
-  | ----------------- | -------- | -------- | --------------------------------- |
-  | id                | UUID     | Yes      | Primary key                       |
-  | user_id           | UUID     | Yes      | FK to auth_users, UNIQUE          |
-  | company_name      | VARCHAR  | Yes      | Max 200 chars                     |
-  | npwp              | VARCHAR  | Yes      | Tax ID, UNIQUE, max 20 chars      |
-  | email             | VARCHAR  | Yes      | Business email, UNIQUE            |
-  | phone             | VARCHAR  | No       | Format: +62xxx                    |
-  | kyc_verified      | BOOLEAN  | Yes      | Default false                     |
-  | created_at        | TIMESTAMP| Yes      | Auto-set                          |
-  | updated_at        | TIMESTAMP| Yes      | Auto-set                          |
-  | created_by        | UUID     | Yes      | FK to auth_users                  |
-
-  ### profile_change_request
-  | Field             | Type     | Required | Notes                             |
-  | ----------------- | -------- | -------- | --------------------------------- |
-  | id                | UUID     | Yes      | Primary key                       |
-  | profile_id        | UUID     | Yes      | FK to user_profile                |
-  | field_name        | VARCHAR  | Yes      | Which field is changing           |
-  | old_value         | TEXT     | No       | Previous value                    |
-  | new_value         | TEXT     | Yes      | Requested value                   |
-  | status            | ENUM     | Yes      | PENDING, APPROVED, REJECTED       |
-  | reviewed_by       | UUID     | No       | FK to auth_users (Admin)          |
-  | reviewed_at       | TIMESTAMP| No       | When decision was made            |
-  | created_at        | TIMESTAMP| Yes      | Auto-set                          |
-  | updated_at        | TIMESTAMP| Yes      | Auto-set                          |
-  | created_by        | UUID     | Yes      | FK to auth_users                  |
-
-  ## I — Interface Contract
-
-  ### GET /api/v1/profile
-  - Who can call it: SHIP_OWNER
-  - Returns: The caller's own profile
-  - Success (200): { id, company_name, npwp, email, phone, kyc_verified }
-  - Errors: 401 · 404
-
-  ### POST /api/v1/profile/change-request
-  - Who can call it: SHIP_OWNER
-  - Required fields: field_name, new_value
-  - Business rule: Creates a PENDING change request (C-1)
-  - Success (201): { id, field_name, new_value, status: "PENDING" }
-  - Errors: 400 · 401 · 409 (already has pending request for this field)
-
-  ### PUT /api/v1/admin/change-request/:id/approve
-  - Who can call it: ADMIN
-  - Business rule: Approves the request, updates the profile (C-2)
-  - Success (200): { id, status: "APPROVED", reviewed_by, reviewed_at }
-  - Errors: 401 · 403 · 404
-
-  ## C — Constraints
-  - C-1: A profile change request must be approved before the profile updates.
-  - C-2: Only Admin role can approve change requests.
-  - C-3: The email field must not be changed after KYC verification.
-  - C-4: A user must not have more than one pending request per field.
-
-  ## E — Evidence
-  - E-1: Given a logged-in Ship Owner, when they view their profile, then their data is displayed.
-  - E-2: Given a Ship Owner submits a change request, then status is PENDING.
-  - E-3: Given an Admin approves a change request, then the profile updates and status is APPROVED.
-  - E-4: Given a user without Admin role calls the approve endpoint, then 403.
-  - E-5: Given a Ship Owner with kyc_verified=true submits email change, then 409.
-  - E-6: Given a required field is missing, then 400 with clear message.
--->
-
-<!--
-  EXAMPLE B — Next.js / Supabase (Generic CRUD: Project Management)
-  ──────────────────────────────────────────────────────────────────
+  EXAMPLE — Next.js / Supabase (Generic CRUD: Project Management)
+  ───────────────────────────────────────────────────────────────
 
   ## D — Data Model
 

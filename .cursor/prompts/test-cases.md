@@ -26,17 +26,16 @@ For each test case:
 
 Output format depends on the project's test tooling:
 
-<!--
-  Example A (Java / Spring Boot):
-  - Generate JUnit 5 test class with @SpringBootTest
-  - Use MockMvc for API endpoint tests
-  - Generate a Postman collection (.json) for manual verification
-
-  Example B (Next.js / TypeScript):
-  - Generate Vitest test file following the project's test standard
-  - Use the mock factory pattern for test data
-  - Follow execution order: mocks → imports → describe → beforeEach → it blocks
--->
+**Project-specific guidance (ASDP Core Engine):**
+- Generate Vitest test files (`.test.ts` / `.test.tsx`)
+- Tests live in `__tests__/` subdirectories within their source folder — never as sibling files
+- Use `@testing-library/react` + `@testing-library/user-event` for component tests
+- Use MSW (`msw`) for API mocking — server setup in `tests/setup/msw.ts`
+- Follow execution order: `vi.mock()` calls → imports → `describe` → `beforeEach` → `it` blocks
+- Environment: `jsdom` for component tests, `node` for pure logic (schemas, utils, API client)
+- Vitest globals are enabled (`globals: true`) — no need to import `describe`, `it`, `expect`
+- Use `renderHook` from `@testing-library/react` for testing custom hooks and Zustand stores
+- Path alias `@/*` maps to `./src/*` — use it in test imports
 
 Mapping from spec to tests:
 
